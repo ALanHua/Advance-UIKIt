@@ -1,6 +1,6 @@
 //
-//  _5_____Tests.m
-//  05-定时雪花Tests
+//  _5______Tests.m
+//  05-定时器雪花Tests
 //
 //  Created by yhp on 16/5/3.
 //  Copyright © 2016年 YouHuaPei. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface _5_____Tests : XCTestCase
+@interface _5______Tests : XCTestCase
 
 @end
 
-@implementation _5_____Tests
+@implementation _5______Tests
 
 - (void)setUp {
     [super setUp];

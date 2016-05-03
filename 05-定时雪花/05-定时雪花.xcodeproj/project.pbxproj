@@ -15,6 +15,7 @@
 		B8816CD51CD8EDD500239039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8816CD31CD8EDD500239039 /* LaunchScreen.storyboard */; };
 		B8816CE01CD8EDD500239039 /* _5_____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8816CDF1CD8EDD500239039 /* _5_____Tests.m */; };
 		B8816CEB1CD8EDD500239039 /* _5_____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8816CEA1CD8EDD500239039 /* _5_____UITests.m */; };
+		B8816CFA1CD8F27900239039 /* YHPDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8816CF91CD8F27900239039 /* YHPDrawView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		B8816CE61CD8EDD500239039 /* 05-定时雪花UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "05-定时雪花UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8816CEA1CD8EDD500239039 /* _5_____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_5_____UITests.m"; sourceTree = "<group>"; };
 		B8816CEC1CD8EDD500239039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8816CF81CD8F27900239039 /* YHPDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPDrawView.h; sourceTree = "<group>"; };
+		B8816CF91CD8F27900239039 /* YHPDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPDrawView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				B8816CC91CD8EDD500239039 /* AppDelegate.m */,
 				B8816CCB1CD8EDD500239039 /* ViewController.h */,
 				B8816CCC1CD8EDD500239039 /* ViewController.m */,
+				B8816CF81CD8F27900239039 /* YHPDrawView.h */,
+				B8816CF91CD8F27900239039 /* YHPDrawView.m */,
 				B8816CCE1CD8EDD500239039 /* Main.storyboard */,
 				B8816CD11CD8EDD500239039 /* Assets.xcassets */,
 				B8816CD31CD8EDD500239039 /* LaunchScreen.storyboard */,
@@ -202,6 +207,7 @@
 		B8816CBA1CD8EDD500239039 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YHP;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = YouHuaPei;
 				TargetAttributes = {
@@ -275,6 +281,7 @@
 			files = (
 				B8816CCD1CD8EDD500239039 /* ViewController.m in Sources */,
 				B8816CCA1CD8EDD500239039 /* AppDelegate.m in Sources */,
+				B8816CFA1CD8F27900239039 /* YHPDrawView.m in Sources */,
 				B8816CC71CD8EDD500239039 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +508,7 @@
 				B8816CF11CD8EDD500239039 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8816CF21CD8EDD500239039 /* Build configuration list for PBXNativeTarget "05-定时雪花Tests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +517,7 @@
 				B8816CF41CD8EDD500239039 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8816CF51CD8EDD500239039 /* Build configuration list for PBXNativeTarget "05-定时雪花UITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +526,7 @@
 				B8816CF71CD8EDD500239039 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B8669A0E1CBA615400401943 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8669A0D1CBA615400401943 /* main.m */; };
+		B8669A111CBA615400401943 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8669A101CBA615400401943 /* AppDelegate.m */; };
+		B8669A141CBA615400401943 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8669A131CBA615400401943 /* ViewController.m */; };
+		B8669A171CBA615400401943 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8669A151CBA615400401943 /* Main.storyboard */; };
+		B8669A191CBA615400401943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8669A181CBA615400401943 /* Assets.xcassets */; };
+		B8669A1C1CBA615400401943 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8669A1A1CBA615400401943 /* LaunchScreen.storyboard */; };
+		B8669A271CBA615400401943 /* _3____View_____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8669A261CBA615400401943 /* _3____View_____Tests.m */; };
+		B8669A321CBA615400401943 /* _3____View_____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8669A311CBA615400401943 /* _3____View_____UITests.m */; };
+		B8669A411CBA700200401943 /* YHPTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8669A401CBA700200401943 /* YHPTwoViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B8669A231CBA615400401943 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8669A011CBA615400401943 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8669A081CBA615400401943;
+			remoteInfo = "03-控制器View的生命周期";
+		};
+		B8669A2E1CBA615400401943 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8669A011CBA615400401943 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8669A081CBA615400401943;
+			remoteInfo = "03-控制器View的生命周期";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B8669A091CBA615400401943 /* 03-控制器View的生命周期.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "03-控制器View的生命周期.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8669A0D1CBA615400401943 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B8669A0F1CBA615400401943 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B8669A101CBA615400401943 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B8669A121CBA615400401943 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B8669A131CBA615400401943 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B8669A161CBA615400401943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B8669A181CBA615400401943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B8669A1B1CBA615400401943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B8669A1D1CBA615400401943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8669A221CBA615400401943 /* 03-控制器View的生命周期Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "03-控制器View的生命周期Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8669A261CBA615400401943 /* _3____View_____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_3____View_____Tests.m"; sourceTree = "<group>"; };
+		B8669A281CBA615400401943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8669A2D1CBA615400401943 /* 03-控制器View的生命周期UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "03-控制器View的生命周期UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8669A311CBA615400401943 /* _3____View_____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_3____View_____UITests.m"; sourceTree = "<group>"; };
+		B8669A331CBA615400401943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8669A3F1CBA700200401943 /* YHPTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPTwoViewController.h; sourceTree = "<group>"; };
+		B8669A401CBA700200401943 /* YHPTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPTwoViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B8669A061CBA615400401943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8669A1F1CBA615400401943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8669A2A1CBA615400401943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B8669A001CBA615400401943 = {
+			isa = PBXGroup;
+			children = (
+				B8669A0B1CBA615400401943 /* 03-控制器View的生命周期 */,
+				B8669A251CBA615400401943 /* 03-控制器View的生命周期Tests */,
+				B8669A301CBA615400401943 /* 03-控制器View的生命周期UITests */,
+				B8669A0A1CBA615400401943 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B8669A0A1CBA615400401943 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8669A091CBA615400401943 /* 03-控制器View的生命周期.app */,
+				B8669A221CBA615400401943 /* 03-控制器View的生命周期Tests.xctest */,
+				B8669A2D1CBA615400401943 /* 03-控制器View的生命周期UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8669A0B1CBA615400401943 /* 03-控制器View的生命周期 */ = {
+			isa = PBXGroup;
+			children = (
+				B8669A0F1CBA615400401943 /* AppDelegate.h */,
+				B8669A101CBA615400401943 /* AppDelegate.m */,
+				B8669A121CBA615400401943 /* ViewController.h */,
+				B8669A131CBA615400401943 /* ViewController.m */,
+				B8669A3F1CBA700200401943 /* YHPTwoViewController.h */,
+				B8669A401CBA700200401943 /* YHPTwoViewController.m */,
+				B8669A151CBA615400401943 /* Main.storyboard */,
+				B8669A181CBA615400401943 /* Assets.xcassets */,
+				B8669A1A1CBA615400401943 /* LaunchScreen.storyboard */,
+				B8669A1D1CBA615400401943 /* Info.plist */,
+				B8669A0C1CBA615400401943 /* Supporting Files */,
+			);
+			path = "03-控制器View的生命周期";
+			sourceTree = "<group>";
+		};
+		B8669A0C1CBA615400401943 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B8669A0D1CBA615400401943 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8669A251CBA615400401943 /* 03-控制器View的生命周期Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B8669A261CBA615400401943 /* _3____View_____Tests.m */,
+				B8669A281CBA615400401943 /* Info.plist */,
+			);
+			path = "03-控制器View的生命周期Tests";
+			sourceTree = "<group>";
+		};
+		B8669A301CBA615400401943 /* 03-控制器View的生命周期UITests */ = {
+			isa = PBXGroup;
+			children = (
+				B8669A311CBA615400401943 /* _3____View_____UITests.m */,
+				B8669A331CBA615400401943 /* Info.plist */,
+			);
+			path = "03-控制器View的生命周期UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B8669A081CBA615400401943 /* 03-控制器View的生命周期 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8669A361CBA615400401943 /* Build configuration list for PBXNativeTarget "03-控制器View的生命周期" */;
+			buildPhases = (
+				B8669A051CBA615400401943 /* Sources */,
+				B8669A061CBA615400401943 /* Frameworks */,
+				B8669A071CBA615400401943 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "03-控制器View的生命周期";
+			productName = "03-控制器View的生命周期";
+			productReference = B8669A091CBA615400401943 /* 03-控制器View的生命周期.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B8669A211CBA615400401943 /* 03-控制器View的生命周期Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8669A391CBA615400401943 /* Build configuration list for PBXNativeTarget "03-控制器View的生命周期Tests" */;
+			buildPhases = (
+				B8669A1E1CBA615400401943 /* Sources */,
+				B8669A1F1CBA615400401943 /* Frameworks */,
+				B8669A201CBA615400401943 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8669A241CBA615400401943 /* PBXTargetDependency */,
+			);
+			name = "03-控制器View的生命周期Tests";
+			productName = "03-控制器View的生命周期Tests";
+			productReference = B8669A221CBA615400401943 /* 03-控制器View的生命周期Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B8669A2C1CBA615400401943 /* 03-控制器View的生命周期UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8669A3C1CBA615400401943 /* Build configuration list for PBXNativeTarget "03-控制器View的生命周期UITests" */;
+			buildPhases = (
+				B8669A291CBA615400401943 /* Sources */,
+				B8669A2A1CBA615400401943 /* Frameworks */,
+				B8669A2B1CBA615400401943 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8669A2F1CBA615400401943 /* PBXTargetDependency */,
+			);
+			name = "03-控制器View的生命周期UITests";
+			productName = "03-控制器View的生命周期UITests";
+			productReference = B8669A2D1CBA615400401943 /* 03-控制器View的生命周期UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B8669A011CBA615400401943 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = YHP;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = YouHuaPei;
+				TargetAttributes = {
+					B8669A081CBA615400401943 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = U9A585N65C;
+					};
+					B8669A211CBA615400401943 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = U9A585N65C;
+						TestTargetID = B8669A081CBA615400401943;
+					};
+					B8669A2C1CBA615400401943 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = U9A585N65C;
+						TestTargetID = B8669A081CBA615400401943;
+					};
+				};
+			};
+			buildConfigurationList = B8669A041CBA615400401943 /* Build configuration list for PBXProject "03-控制器View的生命周期" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B8669A001CBA615400401943;
+			productRefGroup = B8669A0A1CBA615400401943 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B8669A081CBA615400401943 /* 03-控制器View的生命周期 */,
+				B8669A211CBA615400401943 /* 03-控制器View的生命周期Tests */,
+				B8669A2C1CBA615400401943 /* 03-控制器View的生命周期UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B8669A071CBA615400401943 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8669A1C1CBA615400401943 /* LaunchScreen.storyboard in Resources */,
+				B8669A191CBA615400401943 /* Assets.xcassets in Resources */,
+				B8669A171CBA615400401943 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8669A201CBA615400401943 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8669A2B1CBA615400401943 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B8669A051CBA615400401943 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8669A141CBA615400401943 /* ViewController.m in Sources */,
+				B8669A111CBA615400401943 /* AppDelegate.m in Sources */,
+				B8669A0E1CBA615400401943 /* main.m in Sources */,
+				B8669A411CBA700200401943 /* YHPTwoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8669A1E1CBA615400401943 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8669A271CBA615400401943 /* _3____View_____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8669A291CBA615400401943 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8669A321CBA615400401943 /* _3____View_____UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B8669A241CBA615400401943 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B8669A081CBA615400401943 /* 03-控制器View的生命周期 */;
+			targetProxy = B8669A231CBA615400401943 /* PBXContainerItemProxy */;
+		};
+		B8669A2F1CBA615400401943 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B8669A081CBA615400401943 /* 03-控制器View的生命周期 */;
+			targetProxy = B8669A2E1CBA615400401943 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B8669A151CBA615400401943 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8669A161CBA615400401943 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B8669A1A1CBA615400401943 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8669A1B1CBA615400401943 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B8669A341CBA615400401943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B8669A351CBA615400401943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B8669A371CBA615400401943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "03-控制器View的生命周期/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mark.-3----View-----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B8669A381CBA615400401943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "03-控制器View的生命周期/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mark.-3----View-----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B8669A3A1CBA615400401943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "03-控制器View的生命周期Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mark.-3----View-----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/03-控制器View的生命周期.app/03-控制器View的生命周期";
+			};
+			name = Debug;
+		};
+		B8669A3B1CBA615400401943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "03-控制器View的生命周期Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mark.-3----View-----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/03-控制器View的生命周期.app/03-控制器View的生命周期";
+			};
+			name = Release;
+		};
+		B8669A3D1CBA615400401943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "03-控制器View的生命周期UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mark.-3----View-----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "03-控制器View的生命周期";
+			};
+			name = Debug;
+		};
+		B8669A3E1CBA615400401943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "03-控制器View的生命周期UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mark.-3----View-----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "03-控制器View的生命周期";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B8669A041CBA615400401943 /* Build configuration list for PBXProject "03-控制器View的生命周期" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8669A341CBA615400401943 /* Debug */,
+				B8669A351CBA615400401943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8669A361CBA615400401943 /* Build configuration list for PBXNativeTarget "03-控制器View的生命周期" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8669A371CBA615400401943 /* Debug */,
+				B8669A381CBA615400401943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B8669A391CBA615400401943 /* Build configuration list for PBXNativeTarget "03-控制器View的生命周期Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8669A3A1CBA615400401943 /* Debug */,
+				B8669A3B1CBA615400401943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B8669A3C1CBA615400401943 /* Build configuration list for PBXNativeTarget "03-控制器View的生命周期UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8669A3D1CBA615400401943 /* Debug */,
+				B8669A3E1CBA615400401943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B8669A011CBA615400401943 /* Project object */;
+}

@@ -15,6 +15,7 @@
 		B848816C1CDA3A8C00D417BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B848816A1CDA3A8C00D417BF /* LaunchScreen.storyboard */; };
 		B84881771CDA3A8C00D417BF /* _6_____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B84881761CDA3A8C00D417BF /* _6_____Tests.m */; };
 		B84881821CDA3A8C00D417BF /* _6_____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B84881811CDA3A8C00D417BF /* _6_____UITests.m */; };
+		B84881911CDA496700D417BF /* UIImage+YHPImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B84881901CDA496700D417BF /* UIImage+YHPImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		B848817D1CDA3A8C00D417BF /* 06-图片裁剪UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "06-图片裁剪UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84881811CDA3A8C00D417BF /* _6_____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_6_____UITests.m"; sourceTree = "<group>"; };
 		B84881831CDA3A8C00D417BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B848818F1CDA496700D417BF /* UIImage+YHPImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YHPImage.h"; sourceTree = "<group>"; };
+		B84881901CDA496700D417BF /* UIImage+YHPImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YHPImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				B84881601CDA3A8C00D417BF /* AppDelegate.m */,
 				B84881621CDA3A8C00D417BF /* ViewController.h */,
 				B84881631CDA3A8C00D417BF /* ViewController.m */,
+				B848818F1CDA496700D417BF /* UIImage+YHPImage.h */,
+				B84881901CDA496700D417BF /* UIImage+YHPImage.m */,
 				B84881651CDA3A8C00D417BF /* Main.storyboard */,
 				B84881681CDA3A8C00D417BF /* Assets.xcassets */,
 				B848816A1CDA3A8C00D417BF /* LaunchScreen.storyboard */,
@@ -275,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B84881641CDA3A8C00D417BF /* ViewController.m in Sources */,
+				B84881911CDA496700D417BF /* UIImage+YHPImage.m in Sources */,
 				B84881611CDA3A8C00D417BF /* AppDelegate.m in Sources */,
 				B848815E1CDA3A8C00D417BF /* main.m in Sources */,
 			);
@@ -502,6 +508,7 @@
 				B84881881CDA3A8C00D417BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B84881891CDA3A8C00D417BF /* Build configuration list for PBXNativeTarget "06-图片裁剪Tests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +517,7 @@
 				B848818B1CDA3A8C00D417BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B848818C1CDA3A8C00D417BF /* Build configuration list for PBXNativeTarget "06-图片裁剪UITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +526,7 @@
 				B848818E1CDA3A8C00D417BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

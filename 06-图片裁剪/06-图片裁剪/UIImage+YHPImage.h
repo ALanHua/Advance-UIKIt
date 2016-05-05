@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (YHPImage)
-
+// 圆形裁剪
 +(UIImage*)imageWithClipImage:(UIImage*)image border:(CGFloat)border borderWithColor:(UIColor*)color;
+// 控件截屏
++(UIImage*)imageWithCaptureView:(UIView*)view;
+
 @end

@@ -33,4 +33,25 @@
     
     return clipImage;
 }
+
+
++(UIImage*)imageWithCaptureView:(UIView*)view
+{
+    //   生成一张新的图片
+    
+    //  开启位图上下文
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0);
+    //  获取上下文
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    //  把控件上的涂成渲染到上下文
+    [view.layer renderInContext:ctx];
+    //  生成一张图片
+    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
+    //  关闭上下文
+    UIGraphicsEndImageContext();
+    
+    return image;
+    
+}
+
 @end

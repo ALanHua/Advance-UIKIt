@@ -20,11 +20,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6T-Po-NEP" customClass="YHPLockView">
                                 <rect key="frame" x="0.0" y="95.5" width="375" height="476"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="Tau-Zm-gE5"/>
                                     <constraint firstAttribute="width" constant="375" id="V3B-Kw-T5P"/>
                                     <constraint firstAttribute="height" constant="476" id="pia-vF-KX7"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dKu-ph-4JZ" appends="YES" id="daX-UH-GMt"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -36,6 +40,11 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="dKu-ph-4JZ">
+                    <connections>
+                        <action selector="pan:" destination="o6T-Po-NEP" id="SAf-bH-yAE"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="298.5" y="337.5"/>
         </scene>

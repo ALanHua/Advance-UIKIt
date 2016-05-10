@@ -7,10 +7,11 @@
 //
 
 #import "YHPDrawView.h"
+#import "YHPDrawPath.h"
 
 @interface YHPDrawView ()
 /** 贝塞尔曲线 */
-@property(nonatomic,strong)UIBezierPath* path;
+@property(nonatomic,strong)YHPDrawPath* path;
 @property(nonatomic,strong)NSMutableArray* paths;
 
 @end
@@ -24,6 +25,15 @@
     }
     
     return _paths;
+}
+
+- (void)setImage:(UIImage *)image
+{
+    _image = image;
+    [self.paths addObject:image];
+    
+//    重绘
+    [self setNeedsDisplay];
 }
 
 #pragma mark - 仅仅加载xib的时候调用
@@ -48,6 +58,9 @@
     UIPanGestureRecognizer* pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
     
     [self addGestureRecognizer:pan];
+    //  初始化线宽
+    _lineWidth = 1;
+    _pathColor = [UIColor blackColor];
     
 }
 
@@ -58,7 +71,11 @@
     //  获取开始点
     if (pan.state == UIGestureRecognizerStateBegan) {
         //  创建贝塞尔路径
-         _path = [UIBezierPath bezierPath];
+         _path = [YHPDrawPath bezierPath];
+        //  设置线宽
+        _path.lineWidth = _lineWidth;
+        //  设置颜色
+        _path.pathColor = _pathColor;
         //  设置路径的起始点
         [_path moveToPoint:curP];
         //  保存描述好的路径
@@ -75,9 +92,35 @@
 #pragma mark - 绘制图形
 - (void)drawRect:(CGRect)rect
 {
-    for (UIBezierPath* path in self.paths) {
-        [path stroke];
+    for (YHPDrawPath* path in self.paths) {
+       
+        if ([path isKindOfClass:[UIImage class]]) {
+            //  绘制图片
+            UIImage* image = (UIImage*)path;
+            [image drawInRect:rect];
+        }else{
+            // 划线           
+            [path.pathColor set];
+            [path stroke];
+        }
     }
 }
+
+#pragma mark - 功能方法
+// 清屏
+-(void)clear
+{
+    [self.paths removeAllObjects];
+    [self setNeedsDisplay];
+}
+
+// 撤销
+-(void)unDo
+{
+    [self.paths removeLastObject];
+    [self setNeedsDisplay];
+}
+
+
 
 @end

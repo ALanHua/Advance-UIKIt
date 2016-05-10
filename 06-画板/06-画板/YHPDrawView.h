@@ -10,4 +10,19 @@
 
 @interface YHPDrawView : UIView
 
+/** 线宽 */
+@property(nonatomic,assign)NSInteger lineWidth;
+/** 画板线的颜色 */
+@property(nonatomic,strong)UIColor* pathColor;
+/** 图片 */
+@property(nonatomic,strong)UIImage* image;
+
+
+/**
+ *  清屏的方法
+ */
+-(void)clear;
+-(void)unDo;
+
+
 @end

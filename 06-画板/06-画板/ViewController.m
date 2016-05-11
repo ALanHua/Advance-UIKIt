@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "YHPDrawView.h"
+#import "YHPImageHandleView.h"
 
 @interface ViewController ()<UIImagePickerControllerDelegate,
                              UINavigationControllerDelegate>
@@ -92,8 +93,14 @@
 {
     //  获取选中的照片
     UIImage* image = info[UIImagePickerControllerOriginalImage];
+    //  创建一个图片处理的View
+    YHPImageHandleView* imageHandleV = [[YHPImageHandleView alloc]initWithFrame:self.drawView.bounds];
+    [self.drawView addSubview:imageHandleV];
+    imageHandleV.image = image;
+    
     //  把选中的照片画在画板上
-    _drawView.image = image;
+//    _drawView.image = image;
+    
     //  dismiss
     [self dismissViewControllerAnimated:YES completion:nil];
 }

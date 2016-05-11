@@ -17,6 +17,7 @@
 		B8CC98601CE0D82F00E21455 /* _6___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CC985F1CE0D82F00E21455 /* _6___UITests.m */; };
 		B8CC986F1CE0E2B200E21455 /* YHPDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CC986E1CE0E2B200E21455 /* YHPDrawView.m */; };
 		B8CC98721CE2269100E21455 /* YHPDrawPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CC98711CE2269100E21455 /* YHPDrawPath.m */; };
+		B8CC98751CE3872E00E21455 /* YHPImageHandleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CC98741CE3872E00E21455 /* YHPImageHandleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		B8CC986E1CE0E2B200E21455 /* YHPDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPDrawView.m; sourceTree = "<group>"; };
 		B8CC98701CE2269100E21455 /* YHPDrawPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPDrawPath.h; sourceTree = "<group>"; };
 		B8CC98711CE2269100E21455 /* YHPDrawPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPDrawPath.m; sourceTree = "<group>"; };
+		B8CC98731CE3872E00E21455 /* YHPImageHandleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPImageHandleView.h; sourceTree = "<group>"; };
+		B8CC98741CE3872E00E21455 /* YHPImageHandleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPImageHandleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				B8CC986E1CE0E2B200E21455 /* YHPDrawView.m */,
 				B8CC98701CE2269100E21455 /* YHPDrawPath.h */,
 				B8CC98711CE2269100E21455 /* YHPDrawPath.m */,
+				B8CC98731CE3872E00E21455 /* YHPImageHandleView.h */,
+				B8CC98741CE3872E00E21455 /* YHPImageHandleView.m */,
 				B8CC98461CE0D82F00E21455 /* Assets.xcassets */,
 				B8CC98481CE0D82F00E21455 /* LaunchScreen.storyboard */,
 				B8CC984B1CE0D82F00E21455 /* Info.plist */,
@@ -286,6 +291,7 @@
 			files = (
 				B8CC98721CE2269100E21455 /* YHPDrawPath.m in Sources */,
 				B8CC98421CE0D82F00E21455 /* ViewController.m in Sources */,
+				B8CC98751CE3872E00E21455 /* YHPImageHandleView.m in Sources */,
 				B8CC983F1CE0D82F00E21455 /* AppDelegate.m in Sources */,
 				B8CC986F1CE0E2B200E21455 /* YHPDrawView.m in Sources */,
 				B8CC983C1CE0D82F00E21455 /* main.m in Sources */,

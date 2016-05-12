@@ -95,6 +95,10 @@
     UIImage* image = info[UIImagePickerControllerOriginalImage];
     //  创建一个图片处理的View
     YHPImageHandleView* imageHandleV = [[YHPImageHandleView alloc]initWithFrame:self.drawView.bounds];
+    imageHandleV.hanleCompletionBlock = ^(UIImage* image){
+        self.drawView.image = image;
+    };
+    
     [self.drawView addSubview:imageHandleV];
     imageHandleV.image = image;
     

@@ -13,4 +13,7 @@
 /** 图片 */
 @property(nonatomic,strong)UIImage* image;
 
+/** block */
+@property(nonatomic,strong)void (^hanleCompletionBlock)(UIImage* image);
+
 @end

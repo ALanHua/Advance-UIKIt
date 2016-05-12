@@ -111,6 +111,10 @@
                 if (_hanleCompletionBlock) {
                     _hanleCompletionBlock(image);
                 }
+                if (_handleBeginBlock) {
+                    _handleBeginBlock();
+                }
+                
                 [self removeFromSuperview];
             }];
         }];

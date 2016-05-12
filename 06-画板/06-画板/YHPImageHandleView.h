@@ -16,4 +16,6 @@
 /** block */
 @property(nonatomic,strong)void (^hanleCompletionBlock)(UIImage* image);
 
+@property(nonatomic,strong)void (^handleBeginBlock)();
+
 @end

@@ -98,7 +98,9 @@
     imageHandleV.hanleCompletionBlock = ^(UIImage* image){
         self.drawView.image = image;
     };
-    
+    imageHandleV.handleBeginBlock = ^{
+        self.drawView.userInteractionEnabled = NO;
+    };
     [self.drawView addSubview:imageHandleV];
     imageHandleV.image = image;
     

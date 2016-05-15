@@ -503,6 +503,7 @@
 				B8CC98AE1CE63C9200E21455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8CC98AF1CE63C9200E21455 /* Build configuration list for PBXNativeTarget "07-CALayer基本使用Tests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +512,7 @@
 				B8CC98B11CE63C9200E21455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8CC98B21CE63C9200E21455 /* Build configuration list for PBXNativeTarget "07-CALayer基本使用UITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +521,7 @@
 				B8CC98B41CE63C9200E21455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

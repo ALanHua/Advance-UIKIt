@@ -60,7 +60,7 @@
     CGFloat angle =  -transP.y / 200.0 * M_PI;
     // 增加立体感
     CATransform3D transform = CATransform3DIdentity;
-    transform.m34 = -1 / 5.0;
+    transform.m34 = -1 / 500;
     
     transform = CATransform3DMakeRotation(angle, 1, 0, 0);
     
@@ -72,6 +72,7 @@
         // usingSpringWithDamping 值越小，弹性越大
         [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.3 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             _topView.layer.transform = CATransform3DIdentity;
+            _gradient.opacity = 0;
         } completion:^(BOOL finished) {
             
         }];

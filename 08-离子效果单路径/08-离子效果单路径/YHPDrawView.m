@@ -9,82 +9,96 @@
 #import "YHPDrawView.h"
 
 @interface YHPDrawView ()
-
-/** 路径 */
 @property(nonatomic,strong)UIBezierPath* path;
-@property(nonatomic,weak)CALayer* dotlayer;
-@property(nonatomic,weak)CAReplicatorLayer* repl;
+@property(nonatomic,weak)CALayer* dotLayer;
+@property(nonatomic,weak)CAReplicatorLayer* repL;
 @end
 
 @implementation YHPDrawView
 
+static int _instancesCount = 0;
+
+#pragma mark - 懒加载
+-(UIBezierPath*)path
+{
+    if (_path == nil) {
+        _path = [UIBezierPath bezierPath];
+    }
+    return _path;
+}
+
+-(CALayer*)dotLayer
+{
+    if (_dotLayer == nil) {
+        CGFloat wh = 10;
+        CALayer* layer = [CALayer layer];
+        layer.frame = CGRectMake(0, -1000, wh, wh);
+        layer.backgroundColor = [UIColor blueColor].CGColor;
+        layer.cornerRadius = wh / 2;
+        [self.repL addSublayer:layer];
+        _dotLayer = layer;
+    }
+    
+    return _dotLayer;
+}
+#pragma mark - 描述路径起始点
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self reDraw];
-    // 获取触摸点
+    //  获取触摸点
     UITouch* touch = [touches anyObject];
     CGPoint curP = [touch locationInView:self];
-    // 创建路径
-    UIBezierPath* path = [UIBezierPath bezierPath];
-    [path moveToPoint:curP];
-    _path = path;
-    
+    [self.path moveToPoint:curP];
 }
-static int _instancesCount = 0;
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+
+#pragma mark - 描述路径划线
+-(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    // 获取触摸点
+    //  获取触摸点
     UITouch* touch = [touches anyObject];
     CGPoint curP = [touch locationInView:self];
-    // 添加线
-    [_path addLineToPoint:curP];
-    //  重绘
+    [self.path addLineToPoint:curP];
     [self setNeedsDisplay];
     _instancesCount++;
 }
+
+
 #pragma mark - 开始动画
 -(void)startAnim
 {
-    _dotlayer.hidden = NO;
+    // 添加动画
     CAKeyframeAnimation* anim = [CAKeyframeAnimation animation];
     anim.keyPath = @"position";
     anim.path = _path.CGPath;
-    anim.duration = 4;
+    anim.duration = 3;
     anim.repeatCount = MAXFLOAT;
-    [_dotlayer addAnimation:anim forKey:nil];
-    //  复制子层
-    _repl.instanceCount = _instancesCount;
-    _repl.instanceDelay = 0.1;
+    [self.dotLayer addAnimation:anim forKey:nil];
+    _repL.instanceCount = _instancesCount;
+    _repL.instanceDelay =  0.2;
 }
 
+#pragma mark - 重绘
 -(void)reDraw
 {
     _path = nil;
+    _instancesCount = 0;
+    [_dotLayer removeFromSuperlayer];
+    _dotLayer = nil;
     [self setNeedsDisplay];
-    _dotlayer.hidden = YES;
 }
 
-#pragma mark - 画图函数
-- (void)drawRect:(CGRect)rect {
-  
-    [_path stroke];
-}
+#pragma mark - 绘图
 
 - (void)awakeFromNib
 {
-   // 创建复制层
     CAReplicatorLayer* repL = [CAReplicatorLayer layer];
     repL.frame = self.bounds;
     [self.layer addSublayer:repL];
-   // 创建帧动画
-    CGFloat wh = 10;
-    CALayer* layer = [CALayer layer];
-    layer.frame = CGRectMake(0, 0, wh, wh);
-    layer.cornerRadius = wh / 2;
-    layer.backgroundColor = [UIColor blueColor].CGColor;
-    [repL addSublayer:layer];
-    _repl = repL;
-    _dotlayer = layer;
+    _repL = repL;
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    [self.path stroke];
 }
 
 @end

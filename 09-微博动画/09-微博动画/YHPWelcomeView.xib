@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YHPWelcomeView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="MVz-Td-6XH">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doubi" translatesAutoresizingMaskIntoConstraints="NO" id="CMn-3b-wRG">
+                    <rect key="frame" x="137" y="74" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Rg3-Mq-rGE"/>
+                        <constraint firstAttribute="width" constant="100" id="UbG-uo-hSX"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UR-yc-0Xc">
+                    <rect key="frame" x="153.5" y="194" width="68" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="3u0-Jh-ByS"/>
+                        <constraint firstAttribute="width" constant="68" id="drR-6c-rq5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compose_slogan" translatesAutoresizingMaskIntoConstraints="NO" id="KvD-w2-Fwc">
+                    <rect key="frame" x="109" y="100" width="156" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Bbg-uN-zdZ"/>
+                        <constraint firstAttribute="width" constant="156" id="wSJ-Vj-n3Q"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="MVz-Td-6XH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0Qz-PN-xa5"/>
+                <constraint firstItem="2UR-yc-0Xc" firstAttribute="top" secondItem="CMn-3b-wRG" secondAttribute="bottom" constant="20" id="5sr-4m-JVb"/>
+                <constraint firstAttribute="bottom" secondItem="MVz-Td-6XH" secondAttribute="bottom" id="Gk2-Rz-Umu"/>
+                <constraint firstItem="CMn-3b-wRG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="74" id="Of0-sO-g6H"/>
+                <constraint firstItem="2UR-yc-0Xc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OpX-BA-MlN"/>
+                <constraint firstAttribute="trailing" secondItem="MVz-Td-6XH" secondAttribute="trailing" id="ReB-fc-Rlh"/>
+                <constraint firstItem="MVz-Td-6XH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="elW-2A-3e6"/>
+                <constraint firstItem="KvD-w2-Fwc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fc4-Tr-vk7"/>
+                <constraint firstItem="KvD-w2-Fwc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="gHt-hY-4xH"/>
+                <constraint firstItem="CMn-3b-wRG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tYt-hc-F6F"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <connections>
+                <outlet property="icomView" destination="CMn-3b-wRG" id="tnD-VN-9OZ"/>
+                <outlet property="sloganView" destination="KvD-w2-Fwc" id="FFz-Ti-MpT"/>
+                <outlet property="textView" destination="2UR-yc-0Xc" id="dgS-qq-Rok"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="320" height="480"/>
+        <image name="compose_slogan" width="154" height="48"/>
+        <image name="doubi" width="200" height="200"/>
+    </resources>
+</document>

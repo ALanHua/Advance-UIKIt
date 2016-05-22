@@ -7,6 +7,7 @@
 //
 
 #import "YHPGooView.h"
+#define kMaxDistance 80
 
 @interface YHPGooView ()
 @property(nonatomic,weak)UIView* smallCircleView;
@@ -81,7 +82,7 @@
 // 为什么UIButton 不用TouchBegin,因为会跟按钮的监听事件产生冲突
 -(void)pan:(UIPanGestureRecognizer*)pan
 {
-    //  获取手指的偏移量
+//  获取手指的偏移量
     CGPoint tranP = [pan translationInView:self];
     //  修改按钮的形变,不会修改中心点
     CGPoint center = self.center;
@@ -90,7 +91,7 @@
     self.center = center;
     //  复位
     [pan setTranslation:CGPointZero inView:self];
-    //  后面圆是随着半径，是随着两个圆心的距离不断增加而减小
+//  后面圆是随着半径，是随着两个圆心的距离不断增加而减小
     // 计算圆心
     CGFloat d = [self circleCenterDistanceWithBigCircleCenter:self.center smallCircleCenter:self.smallCircleView.center];
     NSLog(@"%f",d);
@@ -101,10 +102,51 @@
     self.smallCircleView.bounds = CGRectMake(0, 0, smallRadius * 2, smallRadius * 2);
     self.smallCircleView.layer.cornerRadius = smallRadius;
     //  绘制不规则矩形，不能通过绘图，应为绘图只会在当前控件上
-    if (d) {
+    if (d > kMaxDistance) {
+        // 影藏小圆
+        self.smallCircleView.hidden = YES;
+        // 移除不规则矩形
+        [self.shapeLayer removeFromSuperlayer];
+        self.shapeLayer = nil;
+    }else if(d > 0 && d < self.smallCircleView.hidden == NO){
         self.shapeLayer.path = [self pathWithBigCircleView:self smallCircleView:self.smallCircleView].CGPath;
     }
-
+//    还原操作
+    if (pan.state == UIGestureRecognizerStateEnded) {
+        
+        if (d > kMaxDistance) {
+            // 展示gif动画
+            UIImageView* imageView = [[UIImageView alloc]initWithFrame:self.bounds];
+            NSMutableArray* arrM = [NSMutableArray array];
+            for (int i = 1; i < 9; i++) {
+                UIImage* image = [UIImage imageNamed:[NSString stringWithFormat:@"%d",i]];
+                [arrM addObject:image];
+            }
+            imageView.animationRepeatCount = 1;
+            imageView.animationDuration = 0.5;
+            imageView.animationImages = arrM;
+            [imageView startAnimating];
+            
+            [self addSubview:imageView];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self removeFromSuperview];
+            });
+            
+        }else{
+            [self.shapeLayer removeFromSuperlayer];
+            self.shapeLayer = nil;
+            self.smallCircleView.hidden = NO;
+            //  设置大圆中心点的位置
+            [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.2 initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
+                self.center = self.smallCircleView.center;
+                
+            } completion:^(BOOL finished) {
+                self.smallCircleView.hidden = NO;
+            }];
+        }
+    }
+    
 }
 
 #pragma mark - 甲酸两圆心之间的距离

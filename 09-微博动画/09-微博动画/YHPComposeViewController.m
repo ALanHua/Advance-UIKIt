@@ -8,7 +8,7 @@
 
 #import "YHPComposeViewController.h"
 #import "YHPMenuItem.h"
-
+#import "YHPMenuItemButton.h"
 @interface YHPComposeViewController ()
 
 @end
@@ -32,7 +32,7 @@
     CGFloat oriY = 300;
     NSUInteger count = _item.count;
     for (int i = 0; i < count; i++) {
-        UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        YHPMenuItemButton* btn = [YHPMenuItemButton buttonWithType:UIButtonTypeCustom];
         col = i % cols;
         row = i /cols;
         x = margin + col * (margin + wh);

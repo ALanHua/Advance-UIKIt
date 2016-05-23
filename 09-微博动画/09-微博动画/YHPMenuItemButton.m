@@ -7,6 +7,7 @@
 //
 
 #import "YHPMenuItemButton.h"
+#define kImageRatio  0.8
 
 @implementation YHPMenuItemButton
 
@@ -25,9 +26,17 @@
 {
     [super layoutSubviews];
     //   UIImageView
-    
+    CGFloat imageX = 0;
+    CGFloat imageY = 0;
+    CGFloat imageW = self.bounds.size.width;
+    CGFloat imageH = self.bounds.size.height * kImageRatio;
+    self.imageView.frame = CGRectMake(imageX, imageY, imageW, imageH);
     //   UILabel
-    
+    CGFloat labelX = imageX;
+    CGFloat labelY = imageH;
+    CGFloat labelW = imageW;
+    CGFloat labelH = self.bounds.size.height - imageH;
+    self.titleLabel.frame = CGRectMake(labelX, labelY, labelW, labelH);
 }
 
 @end

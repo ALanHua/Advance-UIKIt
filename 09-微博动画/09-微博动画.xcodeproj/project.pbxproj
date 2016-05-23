@@ -17,6 +17,10 @@
 		B8546D761CF20051001FDF1B /* _9_____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8546D751CF20051001FDF1B /* _9_____UITests.m */; };
 		B8546D851CF20178001FDF1B /* YHPWelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8546D841CF20178001FDF1B /* YHPWelcomeView.m */; };
 		B8546D871CF201B1001FDF1B /* YHPWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8546D861CF201B1001FDF1B /* YHPWelcomeView.xib */; };
+		B8546D931CF35137001FDF1B /* YHPComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8546D911CF35137001FDF1B /* YHPComposeViewController.m */; };
+		B8546D941CF35137001FDF1B /* YHPComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8546D921CF35137001FDF1B /* YHPComposeViewController.xib */; };
+		B8546D971CF35926001FDF1B /* YHPMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B8546D961CF35926001FDF1B /* YHPMenuItem.m */; };
+		B8546D9A1CF35CD1001FDF1B /* YHPMenuItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B8546D991CF35CD1001FDF1B /* YHPMenuItemButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,13 @@
 		B8546D831CF20178001FDF1B /* YHPWelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPWelcomeView.h; sourceTree = "<group>"; };
 		B8546D841CF20178001FDF1B /* YHPWelcomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPWelcomeView.m; sourceTree = "<group>"; };
 		B8546D861CF201B1001FDF1B /* YHPWelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPWelcomeView.xib; sourceTree = "<group>"; };
+		B8546D901CF35137001FDF1B /* YHPComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPComposeViewController.h; sourceTree = "<group>"; };
+		B8546D911CF35137001FDF1B /* YHPComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPComposeViewController.m; sourceTree = "<group>"; };
+		B8546D921CF35137001FDF1B /* YHPComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPComposeViewController.xib; sourceTree = "<group>"; };
+		B8546D951CF35926001FDF1B /* YHPMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPMenuItem.h; sourceTree = "<group>"; };
+		B8546D961CF35926001FDF1B /* YHPMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPMenuItem.m; sourceTree = "<group>"; };
+		B8546D981CF35CD1001FDF1B /* YHPMenuItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPMenuItemButton.h; sourceTree = "<group>"; };
+		B8546D991CF35CD1001FDF1B /* YHPMenuItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPMenuItemButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +125,13 @@
 				B8546D841CF20178001FDF1B /* YHPWelcomeView.m */,
 				B8546D861CF201B1001FDF1B /* YHPWelcomeView.xib */,
 				B8546D591CF20051001FDF1B /* Main.storyboard */,
-				B8546D5C1CF20051001FDF1B /* Assets.xcassets */,
-				B8546D5E1CF20051001FDF1B /* LaunchScreen.storyboard */,
-				B8546D611CF20051001FDF1B /* Info.plist */,
+				B8546D901CF35137001FDF1B /* YHPComposeViewController.h */,
+				B8546D911CF35137001FDF1B /* YHPComposeViewController.m */,
+				B8546D921CF35137001FDF1B /* YHPComposeViewController.xib */,
+				B8546D951CF35926001FDF1B /* YHPMenuItem.h */,
+				B8546D961CF35926001FDF1B /* YHPMenuItem.m */,
+				B8546D981CF35CD1001FDF1B /* YHPMenuItemButton.h */,
+				B8546D991CF35CD1001FDF1B /* YHPMenuItemButton.m */,
 				B8546D501CF20051001FDF1B /* Supporting Files */,
 			);
 			path = "09-微博动画";
@@ -125,6 +140,9 @@
 		B8546D501CF20051001FDF1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B8546D611CF20051001FDF1B /* Info.plist */,
+				B8546D5E1CF20051001FDF1B /* LaunchScreen.storyboard */,
+				B8546D5C1CF20051001FDF1B /* Assets.xcassets */,
 				B8546D511CF20051001FDF1B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -255,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8546D601CF20051001FDF1B /* LaunchScreen.storyboard in Resources */,
+				B8546D941CF35137001FDF1B /* YHPComposeViewController.xib in Resources */,
 				B8546D5D1CF20051001FDF1B /* Assets.xcassets in Resources */,
 				B8546D5B1CF20051001FDF1B /* Main.storyboard in Resources */,
 				B8546D871CF201B1001FDF1B /* YHPWelcomeView.xib in Resources */,
@@ -286,6 +305,9 @@
 				B8546D551CF20051001FDF1B /* AppDelegate.m in Sources */,
 				B8546D521CF20051001FDF1B /* main.m in Sources */,
 				B8546D851CF20178001FDF1B /* YHPWelcomeView.m in Sources */,
+				B8546D931CF35137001FDF1B /* YHPComposeViewController.m in Sources */,
+				B8546D9A1CF35CD1001FDF1B /* YHPMenuItemButton.m in Sources */,
+				B8546D971CF35926001FDF1B /* YHPMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

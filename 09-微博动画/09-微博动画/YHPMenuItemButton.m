@@ -11,16 +11,31 @@
 
 @implementation YHPMenuItemButton
 
-// 修改按钮内部的布局
-//- (CGRect)imageRectForContentRect:(CGRect)contentRect
-//{
-//    
-//}
-//
-//- (CGRect)titleRectForContentRect:(CGRect)contentRect
-//{
-//    
-//}
+
+-(void)awakeFromNib
+{
+    [self setUp];
+}
+
+-(instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self setUp];
+    }
+    return self;
+}
+
+-(void)setUp
+{
+    self.imageView.contentMode = UIViewContentModeCenter;
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+}
+
+- (void)setHighlighted:(BOOL)highlighted
+{
+    
+}
 // 代码设置控件位置，一般在该方法中重写
 - (void)layoutSubviews
 {

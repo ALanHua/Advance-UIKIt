@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B8189DF41D9029490083EFEE /* YHPkeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8189DF31D9029490083EFEE /* YHPkeyboard.xib */; };
+		B8189DFD1D9033A00083EFEE /* YHPKeyboardTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B8189DFC1D9033A00083EFEE /* YHPKeyboardTool.m */; };
+		B8189DFF1D9033AC0083EFEE /* YHPKeyboardTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8189DFE1D9033AC0083EFEE /* YHPKeyboardTool.xib */; };
 		B8F47D881D8EDF0100CB6C9F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F47D871D8EDF0100CB6C9F /* main.m */; };
 		B8F47D8B1D8EDF0100CB6C9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F47D8A1D8EDF0100CB6C9F /* AppDelegate.m */; };
 		B8F47D8E1D8EDF0100CB6C9F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F47D8D1D8EDF0100CB6C9F /* ViewController.m */; };
@@ -36,7 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B8189DF31D9029490083EFEE /* YHPkeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPkeyboard.xib; sourceTree = "<group>"; };
+		B8189DFB1D9033A00083EFEE /* YHPKeyboardTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPKeyboardTool.h; sourceTree = "<group>"; };
+		B8189DFC1D9033A00083EFEE /* YHPKeyboardTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPKeyboardTool.m; sourceTree = "<group>"; };
+		B8189DFE1D9033AC0083EFEE /* YHPKeyboardTool.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPKeyboardTool.xib; sourceTree = "<group>"; };
 		B8F47D831D8EDF0100CB6C9F /* 10-键盘处理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "10-键盘处理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F47D871D8EDF0100CB6C9F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B8F47D891D8EDF0100CB6C9F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,7 +110,9 @@
 				B8F47D8A1D8EDF0100CB6C9F /* AppDelegate.m */,
 				B8F47D8C1D8EDF0100CB6C9F /* ViewController.h */,
 				B8F47D8D1D8EDF0100CB6C9F /* ViewController.m */,
-				B8189DF31D9029490083EFEE /* YHPkeyboard.xib */,
+				B8189DFB1D9033A00083EFEE /* YHPKeyboardTool.h */,
+				B8189DFC1D9033A00083EFEE /* YHPKeyboardTool.m */,
+				B8189DFE1D9033AC0083EFEE /* YHPKeyboardTool.xib */,
 				B8F47D8F1D8EDF0100CB6C9F /* Main.storyboard */,
 				B8F47D921D8EDF0100CB6C9F /* Assets.xcassets */,
 				B8F47D941D8EDF0100CB6C9F /* LaunchScreen.storyboard */,
@@ -249,9 +254,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8189DFF1D9033AC0083EFEE /* YHPKeyboardTool.xib in Resources */,
 				B8F47D961D8EDF0100CB6C9F /* LaunchScreen.storyboard in Resources */,
 				B8F47D931D8EDF0100CB6C9F /* Assets.xcassets in Resources */,
-				B8189DF41D9029490083EFEE /* YHPkeyboard.xib in Resources */,
 				B8F47D911D8EDF0100CB6C9F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8189DFD1D9033A00083EFEE /* YHPKeyboardTool.m in Sources */,
 				B8F47D8E1D8EDF0100CB6C9F /* ViewController.m in Sources */,
 				B8F47D8B1D8EDF0100CB6C9F /* AppDelegate.m in Sources */,
 				B8F47D881D8EDF0100CB6C9F /* main.m in Sources */,
@@ -422,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				INFOPLIST_FILE = "10-键盘处理/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mark.-0-----";
@@ -433,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				INFOPLIST_FILE = "10-键盘处理/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mark.-0-----";

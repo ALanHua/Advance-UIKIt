@@ -5,30 +5,34 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hHq-B4-8IZ">
+        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="3d9-pC-bHL" customClass="YHPKeyboardTool">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
             <items>
-                <barButtonItem title="上一项" id="iJp-nq-kpq">
+                <barButtonItem title="上一页" id="8wT-Kk-MGY">
                     <connections>
-                        <action selector="previous:" destination="-1" id="ND7-WT-0Fz"/>
+                        <action selector="previous:" destination="3d9-pC-bHL" id="cJW-ov-7wX"/>
                     </connections>
                 </barButtonItem>
-                <barButtonItem title="下一项" id="adI-Qp-r6f">
+                <barButtonItem title="下一页" id="GfQ-K7-D4c">
                     <connections>
-                        <action selector="next:" destination="-1" id="6Vz-Kr-1kQ"/>
+                        <action selector="next:" destination="3d9-pC-bHL" id="v8M-Gl-DGn"/>
                     </connections>
                 </barButtonItem>
-                <barButtonItem style="plain" systemItem="flexibleSpace" id="1yd-gN-RG8"/>
-                <barButtonItem title="完成" id="v0Q-kJ-xXo">
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="SdW-Q8-Hg7"/>
+                <barButtonItem title="完成" id="0WX-FW-c2R">
                     <connections>
-                        <action selector="done:" destination="-1" id="ZVw-aP-ldo"/>
+                        <action selector="done:" destination="3d9-pC-bHL" id="JOz-Zk-hKo"/>
                     </connections>
                 </barButtonItem>
             </items>
-            <point key="canvasLocation" x="373" y="274"/>
+            <connections>
+                <outlet property="nextItem" destination="GfQ-K7-D4c" id="Pwb-WG-12H"/>
+                <outlet property="previousItem" destination="8wT-Kk-MGY" id="fhc-K6-Dgs"/>
+            </connections>
+            <point key="canvasLocation" x="401" y="457"/>
         </toolbar>
     </objects>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8189DF41D9029490083EFEE /* YHPkeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8189DF31D9029490083EFEE /* YHPkeyboard.xib */; };
 		B8F47D881D8EDF0100CB6C9F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F47D871D8EDF0100CB6C9F /* main.m */; };
 		B8F47D8B1D8EDF0100CB6C9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F47D8A1D8EDF0100CB6C9F /* AppDelegate.m */; };
 		B8F47D8E1D8EDF0100CB6C9F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F47D8D1D8EDF0100CB6C9F /* ViewController.m */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8189DF31D9029490083EFEE /* YHPkeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPkeyboard.xib; sourceTree = "<group>"; };
 		B8F47D831D8EDF0100CB6C9F /* 10-键盘处理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "10-键盘处理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F47D871D8EDF0100CB6C9F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B8F47D891D8EDF0100CB6C9F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				B8F47D8A1D8EDF0100CB6C9F /* AppDelegate.m */,
 				B8F47D8C1D8EDF0100CB6C9F /* ViewController.h */,
 				B8F47D8D1D8EDF0100CB6C9F /* ViewController.m */,
+				B8189DF31D9029490083EFEE /* YHPkeyboard.xib */,
 				B8F47D8F1D8EDF0100CB6C9F /* Main.storyboard */,
 				B8F47D921D8EDF0100CB6C9F /* Assets.xcassets */,
 				B8F47D941D8EDF0100CB6C9F /* LaunchScreen.storyboard */,
@@ -248,6 +251,7 @@
 			files = (
 				B8F47D961D8EDF0100CB6C9F /* LaunchScreen.storyboard in Resources */,
 				B8F47D931D8EDF0100CB6C9F /* Assets.xcassets in Resources */,
+				B8189DF41D9029490083EFEE /* YHPkeyboard.xib in Resources */,
 				B8F47D911D8EDF0100CB6C9F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +505,7 @@
 				B8F47DB21D8EDF0100CB6C9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8F47DB31D8EDF0100CB6C9F /* Build configuration list for PBXNativeTarget "10-键盘处理Tests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +514,7 @@
 				B8F47DB51D8EDF0100CB6C9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8F47DB61D8EDF0100CB6C9F /* Build configuration list for PBXNativeTarget "10-键盘处理UITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +523,7 @@
 				B8F47DB81D8EDF0100CB6C9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

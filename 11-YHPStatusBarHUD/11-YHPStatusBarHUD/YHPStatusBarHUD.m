@@ -8,10 +8,13 @@
 
 #import "YHPStatusBarHUD.h"
 
+#define YHPMessageFont [UIFont systemFontOfSize:12]
+static CGFloat const YHPMessageDuration = 2.0;
+
 @implementation YHPStatusBarHUD
 
 static UIWindow* window_;
-
+static NSTimer* timer_;
 
 /**
  显示窗口
@@ -33,6 +36,8 @@ static UIWindow* window_;
 
 +(void)showMessage:(NSString*)msg image:(UIImage*)image
 {
+    // 停止定时器
+    [timer_ invalidate];
     [self showWindow];
     // 添加按钮
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -44,6 +49,8 @@ static UIWindow* window_;
     }
     button.frame = window_.frame;
     [window_ addSubview:button];
+    // 定时消失
+    timer_ = [NSTimer scheduledTimerWithTimeInterval:YHPMessageDuration target:self selector:@selector(hide) userInfo:nil repeats:NO];
 }
 
 +(void)showSuccess:(NSString*)msg
@@ -58,11 +65,29 @@ static UIWindow* window_;
 
 +(void)showLoading:(NSString*)msg
 {
-    
+    // 显示窗口
+    [self showWindow];
+    // 添加文字
+    UILabel* lable = [[UILabel alloc]init];
+    lable.font = YHPMessageFont;
+    lable.frame = window_.bounds;
+    lable.textAlignment = NSTextAlignmentCenter;
+    lable.text = msg;
+    lable.textColor = [UIColor whiteColor];
+    [window_ addSubview:lable];
+    // 添加圈圈
+    UIActivityIndicatorView* indicatorView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [indicatorView startAnimating];
+    CGFloat msgW = [msg sizeWithAttributes:@{NSAttachmentAttributeName: YHPMessageFont}].width;
+    CGFloat centerX = (window_.frame.size.width - msgW) * 0.5 - 20;
+    CGFloat centerY = window_.frame.size.height * 0.5;
+    indicatorView.center = CGPointMake(centerX, centerY);
+    [window_ addSubview:indicatorView];
 }
 
 +(void)hide
 {
     window_ = nil;
+    timer_ = nil;
 }
 @end

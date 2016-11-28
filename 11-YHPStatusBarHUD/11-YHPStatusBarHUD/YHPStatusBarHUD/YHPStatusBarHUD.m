@@ -63,12 +63,12 @@ static NSTimer* timer_;
 
 +(void)showSuccess:(NSString*)msg
 {
-    [self showMessage:msg image:[UIImage imageNamed:@"success"]];
+    [self showMessage:msg image:[UIImage imageNamed:@"YHPStatusBarHUD.bundle/success"]];
 }
 
 +(void)showError:(NSString*)msg
 {
-    [self showMessage:msg image:[UIImage imageNamed:@"error"]];
+    [self showMessage:msg image:[UIImage imageNamed:@"YHPStatusBarHUD.bundle/error"]];
 }
 
 +(void)showLoading:(NSString*)msg

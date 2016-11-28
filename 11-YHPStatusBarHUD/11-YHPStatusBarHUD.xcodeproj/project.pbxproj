@@ -11,11 +11,11 @@
 		B8F9EB331DE740DC005E60EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9EB321DE740DC005E60EB /* AppDelegate.m */; };
 		B8F9EB361DE740DC005E60EB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9EB351DE740DC005E60EB /* ViewController.m */; };
 		B8F9EB391DE740DC005E60EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F9EB371DE740DC005E60EB /* Main.storyboard */; };
-		B8F9EB3B1DE740DC005E60EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F9EB3A1DE740DC005E60EB /* Assets.xcassets */; };
 		B8F9EB3E1DE740DC005E60EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F9EB3C1DE740DC005E60EB /* LaunchScreen.storyboard */; };
 		B8F9EB491DE740DC005E60EB /* _1_YHPStatusBarHUDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9EB481DE740DC005E60EB /* _1_YHPStatusBarHUDTests.m */; };
 		B8F9EB541DE740DC005E60EB /* _1_YHPStatusBarHUDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9EB531DE740DC005E60EB /* _1_YHPStatusBarHUDUITests.m */; };
-		B8F9EB631DE7411B005E60EB /* YHPStatusBarHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9EB621DE7411B005E60EB /* YHPStatusBarHUD.m */; };
+		B8F9EB761DEC7CDB005E60EB /* YHPStatusBarHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B8F9EB731DEC7CDB005E60EB /* YHPStatusBarHUD.bundle */; };
+		B8F9EB771DEC7CDB005E60EB /* YHPStatusBarHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9EB751DEC7CDB005E60EB /* YHPStatusBarHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,6 @@
 		B8F9EB341DE740DC005E60EB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B8F9EB351DE740DC005E60EB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B8F9EB381DE740DC005E60EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B8F9EB3A1DE740DC005E60EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8F9EB3D1DE740DC005E60EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8F9EB3F1DE740DC005E60EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8F9EB441DE740DC005E60EB /* 11-YHPStatusBarHUDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "11-YHPStatusBarHUDTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,8 +51,9 @@
 		B8F9EB4F1DE740DC005E60EB /* 11-YHPStatusBarHUDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "11-YHPStatusBarHUDUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F9EB531DE740DC005E60EB /* _1_YHPStatusBarHUDUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _1_YHPStatusBarHUDUITests.m; sourceTree = "<group>"; };
 		B8F9EB551DE740DC005E60EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8F9EB611DE7411B005E60EB /* YHPStatusBarHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPStatusBarHUD.h; sourceTree = "<group>"; };
-		B8F9EB621DE7411B005E60EB /* YHPStatusBarHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPStatusBarHUD.m; sourceTree = "<group>"; };
+		B8F9EB731DEC7CDB005E60EB /* YHPStatusBarHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YHPStatusBarHUD.bundle; sourceTree = "<group>"; };
+		B8F9EB741DEC7CDB005E60EB /* YHPStatusBarHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPStatusBarHUD.h; sourceTree = "<group>"; };
+		B8F9EB751DEC7CDB005E60EB /* YHPStatusBarHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPStatusBarHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,14 +104,12 @@
 		B8F9EB2D1DE740DC005E60EB /* 11-YHPStatusBarHUD */ = {
 			isa = PBXGroup;
 			children = (
+				B8F9EB721DEC7CDB005E60EB /* YHPStatusBarHUD */,
 				B8F9EB311DE740DC005E60EB /* AppDelegate.h */,
 				B8F9EB321DE740DC005E60EB /* AppDelegate.m */,
 				B8F9EB341DE740DC005E60EB /* ViewController.h */,
 				B8F9EB351DE740DC005E60EB /* ViewController.m */,
-				B8F9EB611DE7411B005E60EB /* YHPStatusBarHUD.h */,
-				B8F9EB621DE7411B005E60EB /* YHPStatusBarHUD.m */,
 				B8F9EB371DE740DC005E60EB /* Main.storyboard */,
-				B8F9EB3A1DE740DC005E60EB /* Assets.xcassets */,
 				B8F9EB3C1DE740DC005E60EB /* LaunchScreen.storyboard */,
 				B8F9EB3F1DE740DC005E60EB /* Info.plist */,
 				B8F9EB2E1DE740DC005E60EB /* Supporting Files */,
@@ -143,6 +141,16 @@
 				B8F9EB551DE740DC005E60EB /* Info.plist */,
 			);
 			path = "11-YHPStatusBarHUDUITests";
+			sourceTree = "<group>";
+		};
+		B8F9EB721DEC7CDB005E60EB /* YHPStatusBarHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B8F9EB731DEC7CDB005E60EB /* YHPStatusBarHUD.bundle */,
+				B8F9EB741DEC7CDB005E60EB /* YHPStatusBarHUD.h */,
+				B8F9EB751DEC7CDB005E60EB /* YHPStatusBarHUD.m */,
+			);
+			path = YHPStatusBarHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8F9EB3E1DE740DC005E60EB /* LaunchScreen.storyboard in Resources */,
-				B8F9EB3B1DE740DC005E60EB /* Assets.xcassets in Resources */,
+				B8F9EB761DEC7CDB005E60EB /* YHPStatusBarHUD.bundle in Resources */,
 				B8F9EB391DE740DC005E60EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +290,7 @@
 				B8F9EB361DE740DC005E60EB /* ViewController.m in Sources */,
 				B8F9EB331DE740DC005E60EB /* AppDelegate.m in Sources */,
 				B8F9EB301DE740DC005E60EB /* main.m in Sources */,
-				B8F9EB631DE7411B005E60EB /* YHPStatusBarHUD.m in Sources */,
+				B8F9EB771DEC7CDB005E60EB /* YHPStatusBarHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +522,7 @@
 				B8F9EB5A1DE740DC005E60EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8F9EB5B1DE740DC005E60EB /* Build configuration list for PBXNativeTarget "11-YHPStatusBarHUDTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +531,7 @@
 				B8F9EB5D1DE740DC005E60EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8F9EB5E1DE740DC005E60EB /* Build configuration list for PBXNativeTarget "11-YHPStatusBarHUDUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +540,7 @@
 				B8F9EB601DE740DC005E60EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

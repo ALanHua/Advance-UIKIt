@@ -36,17 +36,39 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    // 获取触摸点
+    UITouch* touch = [touches anyObject];
+    CGPoint point = [touch locationInView:self.view];
+    // 创建吸附行为
+    UISnapBehavior* snap = [[UISnapBehavior alloc]initWithItem:self.blueView snapToPoint:point];
+    // 防抖系数
+    snap.damping = 1.0;
+    // 添加行为
+    [self.animator removeAllBehaviors];
+    [self.animator addBehavior:snap];
+    
+}
+
+/**
+ 重力加碰撞
+ */
+-(void)textCollision2
+{
     // 1,创建碰撞行为
     UICollisionBehavior* collision = [[UICollisionBehavior alloc]init];
     [collision addItem:self.blueView];
-    [collision addItem:self.segmentedControl];
+    //    [collision addItem:self.segmentedControl];
     // 添加边界
-    CGFloat startY = self.view.frame.size.height * 0.5;
-    CGFloat endX   = self.view.frame.size.width * 0.5;
-    CGFloat endY   = self.view.frame.size.height;
+    //    CGFloat startY = self.view.frame.size.height * 0.5;
+    //    CGFloat endX   = self.view.frame.size.width * 0.5;
+    //    CGFloat endY   = self.view.frame.size.height;
+    //
+    //    [collision addBoundaryWithIdentifier:@"line" fromPoint:CGPointMake(0, startY) toPoint:CGPointMake(endX, endY)];
+    //    [collision addBoundaryWithIdentifier:@"line2" fromPoint:CGPointMake(endX, 0) toPoint:CGPointMake(endX, endY)];
+    CGFloat width  = self.view.frame.size.width;
+    UIBezierPath* path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, width, width)];
     
-    [collision addBoundaryWithIdentifier:@"line" fromPoint:CGPointMake(0, startY) toPoint:CGPointMake(endX, endY)];
-    [collision addBoundaryWithIdentifier:@"line2" fromPoint:CGPointMake(endX, 0) toPoint:CGPointMake(endX, endY)];
+    [collision addBoundaryWithIdentifier:@"circle" forPath:path];
     // 2，创建仿真行为
     UIGravityBehavior* gravity = [[UIGravityBehavior alloc]init];
     [gravity addItem:self.blueView];
@@ -56,6 +78,9 @@
     [self.animator addBehavior:gravity];
 }
 
+/**
+ 碰撞行为
+ */
 -(void)textCollision
 {
     // 1,创建碰撞行为
@@ -73,6 +98,9 @@
     [self.animator addBehavior:gravity];
 }
 
+/**
+ 重力行为
+ */
 -(void)textGravity
 {
     // 2，创建仿真行为

@@ -59,6 +59,29 @@
     return NO;
 }
 
+- (void)cut:(UIMenuController*)menu
+{
+    // 将自己的文字辅助到粘贴板
+    [self copy:menu];
+    // 清空文字
+    self.text = nil;
+    
+}
+
+- (void)copy:(UIMenuController*)menu
+{
+    // 将自己的文字辅助到粘贴板
+    UIPasteboard* board = [UIPasteboard generalPasteboard];
+    board.string = self.text;
+}
+
+- (void)paste:(UIMenuController*)menu
+{
+    // 将粘贴板的文字复制到自己上
+    UIPasteboard* board = [UIPasteboard generalPasteboard];
+    self.text = board.string;
+}
+
 -(void)labelClick
 {
     // 1,label要成为第一响应者

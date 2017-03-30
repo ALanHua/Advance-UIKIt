@@ -28,8 +28,8 @@
 -(void)setUp
 {
     self.userInteractionEnabled = YES;
-    UIGestureRecognizer* gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(labelClick)];
-    [self addGestureRecognizer:gesture];
+//    UIGestureRecognizer* gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(labelClick)];
+//    [self addGestureRecognizer:gesture];
 }
 
 
@@ -51,49 +51,55 @@
  */
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender
 {
-    if (action == @selector(cut:)
-    ||  action == @selector(copy:)
-    ||  action == @selector(paste:)) {
-        return YES;
-    }
+//    if (action == @selector(cut:)
+//    ||  action == @selector(copy:)
+//    ||  action == @selector(paste:)) {
+//        return YES;
+//    }
     return NO;
 }
 
-- (void)cut:(UIMenuController*)menu
-{
-    // 将自己的文字辅助到粘贴板
-    [self copy:menu];
-    // 清空文字
-    self.text = nil;
-    
-}
+//- (void)cut:(UIMenuController*)menu
+//{
+//    // 将自己的文字辅助到粘贴板
+//    [self copy:menu];
+//    // 清空文字
+//    self.text = nil;
+//    
+//}
+//
+//- (void)copy:(UIMenuController*)menu
+//{
+//    // 将自己的文字辅助到粘贴板
+//    UIPasteboard* board = [UIPasteboard generalPasteboard];
+//    board.string = self.text;
+//}
+//
+//- (void)paste:(UIMenuController*)menu
+//{
+//    // 将粘贴板的文字复制到自己上
+//    UIPasteboard* board = [UIPasteboard generalPasteboard];
+//    self.text = board.string;
+//}
 
-- (void)copy:(UIMenuController*)menu
-{
-    // 将自己的文字辅助到粘贴板
-    UIPasteboard* board = [UIPasteboard generalPasteboard];
-    board.string = self.text;
-}
 
-- (void)paste:(UIMenuController*)menu
-{
-    // 将粘贴板的文字复制到自己上
-    UIPasteboard* board = [UIPasteboard generalPasteboard];
-    self.text = board.string;
-}
-
--(void)labelClick
-{
-    // 1,label要成为第一响应者
-    [self becomeFirstResponder];
-    // 2,显示MenuController
-    UIMenuController* menu = [UIMenuController sharedMenuController];
-    // targetRect: 以UIMenuController需要指向的矩形框
-    // targetView: 以targetView左上角作为坐标原点
-    [menu setTargetRect:self.bounds inView:self];
-    
-    [menu setMenuVisible:YES animated:YES];
-    
-}
+//-(void)labelClick
+//{
+//    // 1,label要成为第一响应者
+//    [self becomeFirstResponder];
+//    // 2,显示MenuController
+//    UIMenuController* menu = [UIMenuController sharedMenuController];
+//    // targetRect: 以UIMenuController需要指向的矩形框
+//    // targetView: 以targetView左上角作为坐标原点
+//    UIMenuItem* ding = [[UIMenuItem alloc]initWithTitle:@"顶" action:@selector(ding:)];
+//    UIMenuItem* replay = [[UIMenuItem alloc]initWithTitle:@"恢复" action:@selector(ding:)];
+//    UIMenuItem* report = [[UIMenuItem alloc]initWithTitle:@"举报" action:@selector(ding:)];
+//    menu.menuItems = @[ding,replay,report];
+//    
+//    [menu setTargetRect:self.bounds inView:self];
+//    
+//    [menu setMenuVisible:YES animated:YES];
+//    
+//}
 
 @end

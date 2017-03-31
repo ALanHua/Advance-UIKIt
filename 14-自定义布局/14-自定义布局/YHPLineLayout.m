@@ -23,6 +23,16 @@
     return self;
 }
 
+
+/**
+ 一旦显示边框放生改变的时候，就重新布局 
+ * layoutAttributesForElementsInRect
+ */
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
+{
+    return YES;
+}
+
 /**
  存放所有元素的布局属性数组
  @param rect  存放所有元素的布局属性
@@ -32,8 +42,14 @@
 {
     // 获得super 计算好的布局属性
     NSArray* array =  [super layoutAttributesForElementsInRect:rect];
+    // 计算collectionView最中心点的x值
+    CGFloat centerX = self.collectionView.contentOffset.x + self.collectionView.frame.size.width * 0.5;
+    
     for (UICollectionViewLayoutAttributes* attrs in array) {
-        CGFloat scale = arc4random_uniform(100) / 100.0;
+        // cell 的中心点与collectionView中心点的间距
+        CGFloat delta = ABS(attrs.center.x - centerX);
+        CGFloat scale = 1- delta / self.collectionView.frame.size.width;
+        // 设置缩放比例
         attrs.transform = CGAffineTransformMakeScale(scale, scale);
     }
     

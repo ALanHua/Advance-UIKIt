@@ -14,18 +14,23 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        /*
-         UICollectionViewLayoutAttributes* attrs;
-         1，一个 cell 对应一个UICollectionViewLayoutAttributes对象
-         2，UICollectionViewLayoutAttributes决定frame
-         */
     }
     return self;
 }
 
 
 /**
- 一旦显示边框放生改变的时候，就重新布局 
+ 布局初始化操作，不建议在init方法中做初始化操作
+ */
+- (void)prepareLayout
+{
+    [super prepareLayout];
+    CGFloat insert = (self.collectionView.frame.size.width - self.itemSize.width) * 0.5;
+    self.sectionInset =  UIEdgeInsetsMake(0, insert, 0, insert);
+}
+/**
+ 一旦显示边框放生改变的时候，就重新布局
+ * prepareLayout
  * layoutAttributesForElementsInRect
  */
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
@@ -35,6 +40,9 @@
 
 /**
  存放所有元素的布局属性数组
+ UICollectionViewLayoutAttributes* attrs;
+ 1，一个 cell 对应一个UICollectionViewLayoutAttributes对象
+ 2，UICollectionViewLayoutAttributes决定frame
  @param rect  存放所有元素的布局属性
  @return 决定rect范围布局排布
  */
@@ -55,6 +63,31 @@
     
     
     return array;
+}
+
+
+/**
+ 这个方法返回值，就决定了collectionView停止滚动时的偏移量
+ */
+-(CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity
+{
+    CGRect rect;
+    rect.origin.x = proposedContentOffset.x;
+    rect.origin.y = 0;
+    rect.size = self.collectionView.frame.size;
+    NSArray* array = [super layoutAttributesForElementsInRect:rect];
+    CGFloat centerX = proposedContentOffset.x + self.collectionView.frame.size.width * 0.5;
+    
+//  寻找最小偏移量
+    CGFloat miniDelta =MAXFLOAT;
+    for (UICollectionViewLayoutAttributes* attrs in array) {
+        if(ABS(miniDelta) > ABS(attrs.center.x - centerX)){
+            miniDelta = attrs.center.x - centerX;
+        }
+    }
+//  修改原有偏移量
+    proposedContentOffset.x += miniDelta;
+    return proposedContentOffset;
 }
 
 /**

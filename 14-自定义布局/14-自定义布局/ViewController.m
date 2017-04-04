@@ -50,6 +50,16 @@ static NSString* const YHPCellId = @"cell";
     UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:YHPCellId forIndexPath:indexPath];
     cell.backgroundColor = [UIColor orangeColor];
     
+    NSInteger tag = 10;
+    UILabel* label = (UILabel*)[cell.contentView viewWithTag:tag];
+    if (label == nil) {
+        UILabel* label = [[UILabel alloc]init];
+        label.tag = tag;
+        [cell.contentView addSubview:label];
+    }
+    label.text = [NSString stringWithFormat:@"%zd",indexPath.row];
+    [label sizeToFit];
+    
     return cell;
 }
 

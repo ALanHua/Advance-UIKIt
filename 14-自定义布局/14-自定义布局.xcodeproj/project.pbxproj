@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B806CDBC1E95392E00250B8F /* YHPPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B806CDBA1E95392E00250B8F /* YHPPhotoCell.m */; };
+		B806CDBD1E95392E00250B8F /* YHPPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B806CDBB1E95392E00250B8F /* YHPPhotoCell.xib */; };
 		B89513231E8D48830056FD48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B89513221E8D48830056FD48 /* main.m */; };
 		B89513261E8D48830056FD48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B89513251E8D48830056FD48 /* AppDelegate.m */; };
 		B89513291E8D48830056FD48 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89513281E8D48830056FD48 /* ViewController.m */; };
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B806CDB91E95392E00250B8F /* YHPPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPPhotoCell.h; sourceTree = "<group>"; };
+		B806CDBA1E95392E00250B8F /* YHPPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPPhotoCell.m; sourceTree = "<group>"; };
+		B806CDBB1E95392E00250B8F /* YHPPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPPhotoCell.xib; sourceTree = "<group>"; };
 		B895131E1E8D48830056FD48 /* 14-自定义布局.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "14-自定义布局.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89513221E8D48830056FD48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B89513241E8D48830056FD48 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +116,9 @@
 				B89513271E8D48830056FD48 /* ViewController.h */,
 				B89513281E8D48830056FD48 /* ViewController.m */,
 				B895132A1E8D48830056FD48 /* Main.storyboard */,
+				B806CDB91E95392E00250B8F /* YHPPhotoCell.h */,
+				B806CDBA1E95392E00250B8F /* YHPPhotoCell.m */,
+				B806CDBB1E95392E00250B8F /* YHPPhotoCell.xib */,
 				B895132D1E8D48830056FD48 /* Assets.xcassets */,
 				B895132F1E8D48830056FD48 /* LaunchScreen.storyboard */,
 				B89513321E8D48830056FD48 /* Info.plist */,
@@ -251,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B806CDBD1E95392E00250B8F /* YHPPhotoCell.xib in Resources */,
 				B89513311E8D48830056FD48 /* LaunchScreen.storyboard in Resources */,
 				B895132E1E8D48830056FD48 /* Assets.xcassets in Resources */,
 				B895132C1E8D48830056FD48 /* Main.storyboard in Resources */,
@@ -278,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B806CDBC1E95392E00250B8F /* YHPPhotoCell.m in Sources */,
 				B89513291E8D48830056FD48 /* ViewController.m in Sources */,
 				B89513561E8D4FA10056FD48 /* YHPLineLayout.m in Sources */,
 				B89513261E8D48830056FD48 /* AppDelegate.m in Sources */,
@@ -513,6 +523,7 @@
 				B895134D1E8D48830056FD48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B895134E1E8D48830056FD48 /* Build configuration list for PBXNativeTarget "14-自定义布局Tests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +532,7 @@
 				B89513501E8D48830056FD48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B89513511E8D48830056FD48 /* Build configuration list for PBXNativeTarget "14-自定义布局UITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +541,7 @@
 				B89513531E8D48830056FD48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,33 +8,31 @@
 
 #import "ViewController.h"
 #include "YHPLineLayout.h"
+#import "YHPPhotoCell.h"
 
-@interface ViewController () <UICollectionViewDataSource>
+@interface ViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
 
 @end
 
 @implementation ViewController
 
-static NSString* const YHPCellId = @"cell";
+static NSString* const YHPPhotoId = @"photo";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 创建布局
     YHPLineLayout* layout = [[YHPLineLayout alloc]init];
     layout.itemSize = CGSizeMake(100,100);
-    // 水平滚动
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    
     CGFloat collectionW  = self.view.frame.size.width;
     CGFloat collectionH = 200;
     CGRect frame = CGRectMake(0, 150, collectionW, collectionH);
     UICollectionView* collectionView = [[UICollectionView alloc]initWithFrame:frame collectionViewLayout:layout];
     collectionView.dataSource = self;
-    
+    collectionView.delegate = self;
     [self.view addSubview:collectionView];
     
     // 注册系统自带的cell
-    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:YHPCellId];
+    [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([YHPPhotoCell class]) bundle:nil] forCellWithReuseIdentifier:YHPPhotoId];
     
     
 }
@@ -42,26 +40,31 @@ static NSString* const YHPCellId = @"cell";
 #pragma mark - <UICollectionViewDataSource>
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 50;
+    return 20;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:YHPCellId forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor orangeColor];
-    
-    NSInteger tag = 10;
-    UILabel* label = (UILabel*)[cell.contentView viewWithTag:tag];
-    if (label == nil) {
-        UILabel* label = [[UILabel alloc]init];
-        label.tag = tag;
-        [cell.contentView addSubview:label];
-    }
-    label.text = [NSString stringWithFormat:@"%zd",indexPath.row];
-    [label sizeToFit];
+    YHPPhotoCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:YHPPhotoId forIndexPath:indexPath];
+    cell.imageName = [NSString stringWithFormat:@"%zd",indexPath.item+1];
+//    cell.backgroundColor = [UIColor orangeColor];
+//    NSInteger tag = 10;
+//    UILabel* label = (UILabel*)[cell.contentView viewWithTag:tag];
+//    if (label == nil) {
+//        UILabel* label = [[UILabel alloc]init];
+//        label.tag = tag;
+//        [cell.contentView addSubview:label];
+//    }
+//    label.text = [NSString stringWithFormat:@"%zd",indexPath.row];
+//    [label sizeToFit];
     
     return cell;
 }
 
+#pragma mark - <UICollectionViewDelegate>
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
 
 @end

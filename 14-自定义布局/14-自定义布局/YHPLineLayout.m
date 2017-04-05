@@ -25,6 +25,8 @@
 - (void)prepareLayout
 {
     [super prepareLayout];
+    // 水平滚动
+    self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     CGFloat insert = (self.collectionView.frame.size.width - self.itemSize.width) * 0.5;
     self.sectionInset =  UIEdgeInsetsMake(0, insert, 0, insert);
 }

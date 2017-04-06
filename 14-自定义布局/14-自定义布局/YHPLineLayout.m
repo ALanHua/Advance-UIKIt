@@ -70,6 +70,7 @@
 
 /**
  这个方法返回值，就决定了collectionView停止滚动时的偏移量
+ velocity 滚动数率
  */
 -(CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity
 {

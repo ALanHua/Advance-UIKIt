@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #include "YHPLineLayout.h"
 #import "YHPPhotoCell.h"
+#import "YHPGridLayout.h"
 
 @interface ViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -20,6 +21,27 @@ static NSString* const YHPPhotoId = @"photo";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self setUpGridLayout];
+}
+
+-(void)setUpGridLayout
+{
+    // 创建布局
+    YHPGridLayout* layout = [[YHPGridLayout alloc]init];
+    CGRect frame = self.view.bounds;
+    UICollectionView* collectionView = [[UICollectionView alloc]initWithFrame:frame collectionViewLayout:layout];
+    collectionView.dataSource = self;
+    collectionView.delegate = self;
+    [self.view addSubview:collectionView];
+    
+    // 注册系统自带的cell
+    [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([YHPPhotoCell class]) bundle:nil] forCellWithReuseIdentifier:YHPPhotoId];
+    
+}
+
+-(void)setUpLineLayout
+{
     // 创建布局
     YHPLineLayout* layout = [[YHPLineLayout alloc]init];
     layout.itemSize = CGSizeMake(100,100);
@@ -33,7 +55,6 @@ static NSString* const YHPPhotoId = @"photo";
     
     // 注册系统自带的cell
     [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([YHPPhotoCell class]) bundle:nil] forCellWithReuseIdentifier:YHPPhotoId];
-    
     
 }
 

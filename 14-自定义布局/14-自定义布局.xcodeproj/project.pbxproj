@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B806CDBC1E95392E00250B8F /* YHPPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B806CDBA1E95392E00250B8F /* YHPPhotoCell.m */; };
 		B806CDBD1E95392E00250B8F /* YHPPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B806CDBB1E95392E00250B8F /* YHPPhotoCell.xib */; };
+		B815E0851E98726C00B6B80B /* YHPCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B815E0841E98726C00B6B80B /* YHPCircleLayout.m */; };
 		B856E0401E96849500EA6F82 /* YHPGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E03F1E96849500EA6F82 /* YHPGridLayout.m */; };
 		B89513231E8D48830056FD48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B89513221E8D48830056FD48 /* main.m */; };
 		B89513261E8D48830056FD48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B89513251E8D48830056FD48 /* AppDelegate.m */; };
@@ -42,6 +43,8 @@
 		B806CDB91E95392E00250B8F /* YHPPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPPhotoCell.h; sourceTree = "<group>"; };
 		B806CDBA1E95392E00250B8F /* YHPPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPPhotoCell.m; sourceTree = "<group>"; };
 		B806CDBB1E95392E00250B8F /* YHPPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPPhotoCell.xib; sourceTree = "<group>"; };
+		B815E0831E98726C00B6B80B /* YHPCircleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPCircleLayout.h; sourceTree = "<group>"; };
+		B815E0841E98726C00B6B80B /* YHPCircleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPCircleLayout.m; sourceTree = "<group>"; };
 		B856E03E1E96849500EA6F82 /* YHPGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPGridLayout.h; sourceTree = "<group>"; };
 		B856E03F1E96849500EA6F82 /* YHPGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPGridLayout.m; sourceTree = "<group>"; };
 		B895131E1E8D48830056FD48 /* 14-自定义布局.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "14-自定义布局.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +119,8 @@
 				B89513551E8D4FA10056FD48 /* YHPLineLayout.m */,
 				B856E03E1E96849500EA6F82 /* YHPGridLayout.h */,
 				B856E03F1E96849500EA6F82 /* YHPGridLayout.m */,
+				B815E0831E98726C00B6B80B /* YHPCircleLayout.h */,
+				B815E0841E98726C00B6B80B /* YHPCircleLayout.m */,
 				B89513241E8D48830056FD48 /* AppDelegate.h */,
 				B89513251E8D48830056FD48 /* AppDelegate.m */,
 				B89513271E8D48830056FD48 /* ViewController.h */,
@@ -297,6 +302,7 @@
 				B89513561E8D4FA10056FD48 /* YHPLineLayout.m in Sources */,
 				B89513261E8D48830056FD48 /* AppDelegate.m in Sources */,
 				B89513231E8D48830056FD48 /* main.m in Sources */,
+				B815E0851E98726C00B6B80B /* YHPCircleLayout.m in Sources */,
 				B856E0401E96849500EA6F82 /* YHPGridLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

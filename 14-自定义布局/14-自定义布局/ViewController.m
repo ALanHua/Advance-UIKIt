@@ -10,19 +10,52 @@
 #include "YHPLineLayout.h"
 #import "YHPPhotoCell.h"
 #import "YHPGridLayout.h"
+#import "YHPCircleLayout.h"
 
 @interface ViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
-
+/** UIcollectionView */
+@property(nonatomic,strong)UICollectionView* collectionView;
+/** 数据 */
+@property(nonatomic,strong)NSMutableArray* imageName;
 @end
 
 @implementation ViewController
 
 static NSString* const YHPPhotoId = @"photo";
 
+
+- (NSMutableArray *)imageName
+{
+    if(!_imageName){
+        _imageName = [NSMutableArray array];
+        for (int i = 0; i < 20; i++) {
+           [_imageName addObject:[NSString stringWithFormat:@"%d",i+1]];
+        }
+    }
+    return _imageName;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self setUpGridLayout];
+    [self setUpCircleLayout];
+}
+
+-(void)setUpCircleLayout
+{
+    // 创建布局
+    YHPCircleLayout* layout = [[YHPCircleLayout alloc]init];
+    CGFloat collectionW  = self.view.frame.size.width;
+    CGFloat collectionH = 200;
+    CGRect frame = CGRectMake(0, 150, collectionW, collectionH);
+    UICollectionView* collectionView = [[UICollectionView alloc]initWithFrame:frame collectionViewLayout:layout];
+    collectionView.dataSource = self;
+    collectionView.delegate = self;
+    [self.view addSubview:collectionView];
+    self.collectionView = collectionView;
+    // 注册系统自带的cell
+    [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([YHPPhotoCell class]) bundle:nil] forCellWithReuseIdentifier:YHPPhotoId];
+    
 }
 
 -(void)setUpGridLayout
@@ -58,26 +91,31 @@ static NSString* const YHPPhotoId = @"photo";
     
 }
 
+/**
+ 切换布局
+ */
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    if ([self.collectionView.collectionViewLayout isKindOfClass:[YHPLineLayout class]]) {
+        YHPCircleLayout* layout = [[YHPCircleLayout alloc]init];
+        [self.collectionView setCollectionViewLayout:layout animated:YES];
+    }else{
+        YHPLineLayout* layout = [[YHPLineLayout alloc]init];
+        layout.itemSize = CGSizeMake(100,100);
+        [self.collectionView setCollectionViewLayout:layout animated:YES];
+    }
+}
+
 #pragma mark - <UICollectionViewDataSource>
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 20;
+    return self.imageName.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     YHPPhotoCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:YHPPhotoId forIndexPath:indexPath];
-    cell.imageName = [NSString stringWithFormat:@"%zd",indexPath.item+1];
-//    cell.backgroundColor = [UIColor orangeColor];
-//    NSInteger tag = 10;
-//    UILabel* label = (UILabel*)[cell.contentView viewWithTag:tag];
-//    if (label == nil) {
-//        UILabel* label = [[UILabel alloc]init];
-//        label.tag = tag;
-//        [cell.contentView addSubview:label];
-//    }
-//    label.text = [NSString stringWithFormat:@"%zd",indexPath.row];
-//    [label sizeToFit];
+    cell.imageName = self.imageName[indexPath.item];
     
     return cell;
 }
@@ -85,7 +123,8 @@ static NSString* const YHPPhotoId = @"photo";
 #pragma mark - <UICollectionViewDelegate>
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [self.imageName removeObjectAtIndex:indexPath.item];
+    [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
 }
 
 @end

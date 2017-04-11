@@ -8,12 +8,28 @@
 
 #import "YHPWaterflowLayout.h"
 
+static const NSInteger YHPDefaultColumnCount = 3;
+static const CGFloat YHPDefaultColumnMargin = 10;
+static const CGFloat YHPDefaultRowMargin = 10;
+static const UIEdgeInsets YHPDefaultEdgeInserts = {10,10,10,10};
+
 @interface YHPWaterflowLayout()
 /** 所有布局属性 */
 @property(nonatomic,strong)NSMutableArray* attrsArray;
+/** 所有列的最大值 */
+@property(nonatomic,strong)NSMutableArray* columnHeights;
 @end
 
 @implementation YHPWaterflowLayout
+
+#pragma mark - 懒加载
+-(NSMutableArray *)columnHeights
+{
+    if (!_columnHeights) {
+        _columnHeights = [NSMutableArray array];
+    }
+    return _columnHeights;
+}
 
 - (NSMutableArray *)attrsArray
 {
@@ -23,7 +39,6 @@
     return _attrsArray;
 }
 
-
 /**
  初始化
  */
@@ -31,6 +46,12 @@
 {
     [super prepareLayout];
     
+    [self.columnHeights removeAllObjects];
+    
+    for (NSInteger i = 0; i < YHPDefaultColumnCount; i++) {
+        NSNumber *number = @(YHPDefaultEdgeInserts.top);
+        [self.columnHeights addObject:number];
+    }
     // 清除之前的布局属性
     [self.attrsArray removeAllObjects];
     // 开始布局每一个cell的布局属性
@@ -61,8 +82,38 @@
 -(UICollectionViewLayoutAttributes*)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewLayoutAttributes* attrs = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    attrs.frame = CGRectMake(arc4random_uniform(300), arc4random_uniform(300), arc4random_uniform(300), arc4random_uniform(300));
+   
+    // collectionView的宽度
+    CGFloat collectionViewW = self.collectionView.frame.size.width;
     
+    CGFloat w = (collectionViewW - YHPDefaultEdgeInserts.left - YHPDefaultEdgeInserts.right -(YHPDefaultColumnCount - 1)*YHPDefaultColumnMargin) / YHPDefaultColumnCount;
+    CGFloat h = 100;
+    // 找出高度最小的那一列
+//    __block NSUInteger destColumn = 0;
+//    __block CGFloat minColumnHeight = MAXFLOAT;
+//    [self.columnHeight enumerateObjectsUsingBlock:^(NSNumber* columnHeightNumber, NSUInteger idx, BOOL * _Nonnull stop) {
+//        CGFloat columnHeight = columnHeightNumber.doubleValue;
+//        if (columnHeight < minColumnHeight) {
+//            minColumnHeight = columnHeight;
+//            destColumn = idx;
+//        }
+//    }];
+    NSUInteger destColumn = 0;
+    CGFloat minColumnHeight = [self.columnHeights[0] doubleValue];
+    for (NSInteger i = 1; i < YHPDefaultColumnCount; i++) {
+        CGFloat columnHeight = [self.columnHeights[i] doubleValue];
+        if (minColumnHeight > columnHeight) {
+            minColumnHeight = columnHeight;
+            destColumn = i;
+        }
+    }
+    CGFloat x = YHPDefaultEdgeInserts.left + destColumn * (w + YHPDefaultColumnMargin);
+    CGFloat y = minColumnHeight + YHPDefaultRowMargin;
+    attrs.frame = CGRectMake(x,y,w,h);
+//    NSLog(@"%zd,%f,%f,%f",destColumn,minColumnHeight,x,y);
+    // 更新最短那列的高度
+    self.columnHeights[destColumn] = @(CGRectGetMaxY(attrs.frame));
+//    NSLog(@"%@",self.columnHeights);
     return attrs;
 }
 

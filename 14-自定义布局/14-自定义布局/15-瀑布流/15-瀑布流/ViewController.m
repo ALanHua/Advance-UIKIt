@@ -20,7 +20,7 @@ static NSString* const YHPShopId = @"shop";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [self setUpWaterflowLayout];
 }
 
 -(void)setUpWaterflowLayout
@@ -45,6 +45,7 @@ static NSString* const YHPShopId = @"shop";
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:YHPShopId forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor orangeColor];
     NSInteger tag = 10;
     UILabel* label = [(UILabel*)cell.contentView viewWithTag:tag];
     if (label == nil) {

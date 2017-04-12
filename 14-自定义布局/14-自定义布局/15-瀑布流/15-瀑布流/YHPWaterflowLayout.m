@@ -87,7 +87,7 @@ static const UIEdgeInsets YHPDefaultEdgeInserts = {10,10,10,10};
     CGFloat collectionViewW = self.collectionView.frame.size.width;
     
     CGFloat w = (collectionViewW - YHPDefaultEdgeInserts.left - YHPDefaultEdgeInserts.right -(YHPDefaultColumnCount - 1)*YHPDefaultColumnMargin) / YHPDefaultColumnCount;
-    CGFloat h = 100;
+    CGFloat h = 50 + arc4random_uniform(100);
     // 找出高度最小的那一列
 //    __block NSUInteger destColumn = 0;
 //    __block CGFloat minColumnHeight = MAXFLOAT;
@@ -110,7 +110,9 @@ static const UIEdgeInsets YHPDefaultEdgeInserts = {10,10,10,10};
     CGFloat x = YHPDefaultEdgeInserts.left + destColumn * (w + YHPDefaultColumnMargin);
     CGFloat y = minColumnHeight + YHPDefaultRowMargin;
     attrs.frame = CGRectMake(x,y,w,h);
-//    NSLog(@"%zd,%f,%f,%f",destColumn,minColumnHeight,x,y);
+    if (y != YHPDefaultEdgeInserts.top) {
+        y += YHPDefaultRowMargin;
+    }
     // 更新最短那列的高度
     self.columnHeights[destColumn] = @(CGRectGetMaxY(attrs.frame));
 //    NSLog(@"%@",self.columnHeights);
@@ -120,7 +122,14 @@ static const UIEdgeInsets YHPDefaultEdgeInserts = {10,10,10,10};
 
 - (CGSize)collectionViewContentSize
 {
-    return CGSizeMake(0, 1000);
+    CGFloat maxColumnHeight = [self.columnHeights[0] doubleValue];;
+    for (NSInteger i = 1; i < YHPDefaultColumnCount; i++) {
+        CGFloat columnHeight = [self.columnHeights[i] doubleValue];
+        if (maxColumnHeight < columnHeight) {
+            maxColumnHeight = columnHeight;
+        }
+    }
+    return CGSizeMake(0, maxColumnHeight + YHPDefaultEdgeInserts.bottom);
 }
 
 

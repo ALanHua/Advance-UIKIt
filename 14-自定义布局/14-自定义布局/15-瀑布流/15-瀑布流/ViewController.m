@@ -8,8 +8,15 @@
 
 #import "ViewController.h"
 #import "YHPWaterflowLayout.h"
+#import "YHPShop.h"
+#import "MJExtension.h"
+#import "MJRefresh.h"
+#import "YHPShopCell.h"
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+/** 所有商品数据 */
+@property(nonatomic,strong)NSMutableArray* shops;
+@property(nonatomic,weak)UICollectionView* collectionView;
 
 @end
 
@@ -17,10 +24,30 @@
 
 static NSString* const YHPShopId = @"shop";
 
+- (NSMutableArray *)shops
+{
+    if (!_shops) {
+        _shops = [NSMutableArray array];
+    }
+    return _shops;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setUpWaterflowLayout];
+    [self setUpRefresh];
+}
+
+#pragma mark - 初始化
+-(void)setUpRefresh
+{
+    // header
+    self.collectionView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewShops)];
+    [self.collectionView.header beginRefreshing];
+    // footer
+    self.collectionView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreShops)];
+    self.collectionView.footer.hidden = YES;
 }
 
 -(void)setUpWaterflowLayout
@@ -28,33 +55,51 @@ static NSString* const YHPShopId = @"shop";
     YHPWaterflowLayout* layout = [[YHPWaterflowLayout alloc]init];
     CGRect frame = self.view.bounds;
     UICollectionView* collectionView = [[UICollectionView alloc]initWithFrame:frame collectionViewLayout:layout];
-//    collectionView.delegate = self;
+    collectionView.backgroundColor = [UIColor whiteColor];
     collectionView.dataSource = self;
     [self.view addSubview:collectionView];
-    
     // 注册
-    [collectionView registerClass:[UICollectionViewCell class]forCellWithReuseIdentifier:YHPShopId];
+    [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([YHPShopCell class]) bundle:nil] forCellWithReuseIdentifier:YHPShopId];
+    self.collectionView = collectionView;
 }
-     
+#pragma mark - 加载数据
+-(void)loadNewShops
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSArray* shops = [YHPShop objectArrayWithFilename:@"1.plist"];
+        [self.shops removeAllObjects];
+        [self.shops addObjectsFromArray:shops];
+        // 刷新格子
+        [self.collectionView reloadData];
+        [self.collectionView.header endRefreshing];
+    });
+    
+}
+
+-(void)loadMoreShops
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSArray* shops = [YHPShop objectArrayWithFilename:@"1.plist"];
+        [self.shops addObjectsFromArray:shops];
+        // 刷新格子
+        [self.collectionView reloadData];
+        [self.collectionView.footer endRefreshing];
+    });
+    
+}
+
 #pragma mark - <UICollectionViewDataSource>
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 50;
+    self.collectionView.footer.hidden = (self.shops.count == 0);
+    return self.shops.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:YHPShopId forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor orangeColor];
-    NSInteger tag = 10;
-    UILabel* label = [(UILabel*)cell.contentView viewWithTag:tag];
-    if (label == nil) {
-        label = [[UILabel alloc]init];
-        label.tag = tag;
-        [cell.contentView addSubview:label];
-    }
-    label.text = [NSString stringWithFormat:@"%zd",indexPath.item];
-    [label sizeToFit];
+    YHPShopCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:YHPShopId forIndexPath:indexPath];
+    cell.shop = self.shops[indexPath.item];
+    
     return cell;
     
 }

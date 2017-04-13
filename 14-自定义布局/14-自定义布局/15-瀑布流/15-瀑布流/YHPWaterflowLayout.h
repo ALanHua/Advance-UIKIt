@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YHPWaterflowLayout : UICollectionViewLayout
+@class YHPWaterflowLayout;
 
+@protocol YHPWaterflowLayoutDelegate <NSObject>
+@required
+- (CGFloat)waterflowLayout :(YHPWaterflowLayout *)waterflowLayout heightForItemAtIndex:(NSUInteger)index itemWidth:(CGFloat)itemWidth;
+@optional
+-(NSInteger)columnCountInWaterFlowLayout:(YHPWaterflowLayout*)waterflowLayout;
+-(CGFloat)columnMarginInWaterFlowLayout:(YHPWaterflowLayout*)waterflowLayout;
+-(CGFloat)rowMarginInWaterFlowLayout:(YHPWaterflowLayout*)waterflowLayout;
+-(UIEdgeInsets)edgeInsertInWaterFlowLayout:(YHPWaterflowLayout*)waterflowLayout;
+@end
+
+@interface YHPWaterflowLayout : UICollectionViewLayout
+/*代理*/
+@property(nonatomic,weak)id<YHPWaterflowLayoutDelegate> delegate;
 @end

@@ -18,9 +18,49 @@ static const UIEdgeInsets YHPDefaultEdgeInserts = {10,10,10,10};
 @property(nonatomic,strong)NSMutableArray* attrsArray;
 /** 所有列的最大值 */
 @property(nonatomic,strong)NSMutableArray* columnHeights;
+/** 内容高度 */
+@property(nonatomic,assign)CGFloat containHeight;
+
+/** 方法声明*/
+-(CGFloat)rowMargin;
+-(CGFloat)columnMargin;
+-(NSInteger)columnCount;
+-(UIEdgeInsets)edgeInsert;
 @end
 
 @implementation YHPWaterflowLayout
+
+#pragma mark - 常见数据处理
+-(CGFloat)rowMargin
+{
+    if ([self.delegate respondsToSelector:@selector(rowMarginInWaterFlowLayout:)]) {
+       return  [self.delegate rowMarginInWaterFlowLayout:self];
+    }
+    return YHPDefaultRowMargin;
+}
+
+-(CGFloat)columnMargin
+{
+    if ([self.delegate respondsToSelector:@selector(columnMarginInWaterFlowLayout:)]) {
+        return  [self.delegate columnMarginInWaterFlowLayout:self];
+    }
+    return YHPDefaultColumnMargin;
+}
+-(NSInteger)columnCount
+{
+    if ([self.delegate respondsToSelector:@selector(columnCountInWaterFlowLayout:)]) {
+        return  [self.delegate columnCountInWaterFlowLayout:self];
+    }
+    return YHPDefaultColumnCount;
+}
+
+-(UIEdgeInsets)edgeInsert
+{
+    if ([self.delegate respondsToSelector:@selector(edgeInsertInWaterFlowLayout:)]) {
+        return  [self.delegate edgeInsertInWaterFlowLayout:self];
+    }
+    return YHPDefaultEdgeInserts;
+}
 
 #pragma mark - 懒加载
 -(NSMutableArray *)columnHeights
@@ -45,11 +85,11 @@ static const UIEdgeInsets YHPDefaultEdgeInserts = {10,10,10,10};
 -(void)prepareLayout
 {
     [super prepareLayout];
-    
+    self.containHeight = 0;
     [self.columnHeights removeAllObjects];
     
-    for (NSInteger i = 0; i < YHPDefaultColumnCount; i++) {
-        NSNumber *number = @(YHPDefaultEdgeInserts.top);
+    for (NSInteger i = 0; i < self.columnCount; i++) {
+        NSNumber *number = @(self.edgeInsert.top);
         [self.columnHeights addObject:number];
     }
     // 清除之前的布局属性
@@ -86,8 +126,8 @@ static const UIEdgeInsets YHPDefaultEdgeInserts = {10,10,10,10};
     // collectionView的宽度
     CGFloat collectionViewW = self.collectionView.frame.size.width;
     
-    CGFloat w = (collectionViewW - YHPDefaultEdgeInserts.left - YHPDefaultEdgeInserts.right -(YHPDefaultColumnCount - 1)*YHPDefaultColumnMargin) / YHPDefaultColumnCount;
-    CGFloat h = 50 + arc4random_uniform(100);
+    CGFloat w = (collectionViewW - self.edgeInsert.left - self.edgeInsert.right -(self.columnCount - 1)*self.columnMargin) / self.columnCount;
+    CGFloat h = [self.delegate waterflowLayout:self heightForItemAtIndex:indexPath.item itemWidth:w];
     // 找出高度最小的那一列
 //    __block NSUInteger destColumn = 0;
 //    __block CGFloat minColumnHeight = MAXFLOAT;
@@ -100,36 +140,39 @@ static const UIEdgeInsets YHPDefaultEdgeInserts = {10,10,10,10};
 //    }];
     NSUInteger destColumn = 0;
     CGFloat minColumnHeight = [self.columnHeights[0] doubleValue];
-    for (NSInteger i = 1; i < YHPDefaultColumnCount; i++) {
+    
+    for (NSInteger i = 1; i < self.columnCount; i++) {
         CGFloat columnHeight = [self.columnHeights[i] doubleValue];
         if (minColumnHeight > columnHeight) {
             minColumnHeight = columnHeight;
             destColumn = i;
         }
     }
-    CGFloat x = YHPDefaultEdgeInserts.left + destColumn * (w + YHPDefaultColumnMargin);
-    CGFloat y = minColumnHeight + YHPDefaultRowMargin;
+    CGFloat x = self.edgeInsert.left + destColumn * (w + self.columnMargin);
+    CGFloat y = minColumnHeight + self.rowMargin;
     attrs.frame = CGRectMake(x,y,w,h);
-    if (y != YHPDefaultEdgeInserts.top) {
-        y += YHPDefaultRowMargin;
+    if (y != self.edgeInsert.top) {
+        y += [self rowMargin];
     }
     // 更新最短那列的高度
     self.columnHeights[destColumn] = @(CGRectGetMaxY(attrs.frame));
+    CGFloat columnHeight = [self.columnHeights[destColumn] doubleValue];
+    if (self.containHeight < columnHeight) {
+        self.containHeight = columnHeight;
+    }
+    
 //    NSLog(@"%@",self.columnHeights);
     return attrs;
 }
 
 
+/**
+ 计算滚动范围
+ @return CGSize
+ */
 - (CGSize)collectionViewContentSize
 {
-    CGFloat maxColumnHeight = [self.columnHeights[0] doubleValue];;
-    for (NSInteger i = 1; i < YHPDefaultColumnCount; i++) {
-        CGFloat columnHeight = [self.columnHeights[i] doubleValue];
-        if (maxColumnHeight < columnHeight) {
-            maxColumnHeight = columnHeight;
-        }
-    }
-    return CGSizeMake(0, maxColumnHeight + YHPDefaultEdgeInserts.bottom);
+    return CGSizeMake(0, self.containHeight + self.edgeInsert.bottom);
 }
 
 

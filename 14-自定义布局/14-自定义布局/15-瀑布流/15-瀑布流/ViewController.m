@@ -13,7 +13,7 @@
 #import "MJRefresh.h"
 #import "YHPShopCell.h"
 
-@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface ViewController ()<UICollectionViewDataSource,YHPWaterflowLayoutDelegate>
 /** 所有商品数据 */
 @property(nonatomic,strong)NSMutableArray* shops;
 @property(nonatomic,weak)UICollectionView* collectionView;
@@ -53,6 +53,7 @@ static NSString* const YHPShopId = @"shop";
 -(void)setUpWaterflowLayout
 {
     YHPWaterflowLayout* layout = [[YHPWaterflowLayout alloc]init];
+    layout.delegate = self;
     CGRect frame = self.view.bounds;
     UICollectionView* collectionView = [[UICollectionView alloc]initWithFrame:frame collectionViewLayout:layout];
     collectionView.backgroundColor = [UIColor whiteColor];
@@ -103,5 +104,23 @@ static NSString* const YHPShopId = @"shop";
     return cell;
     
 }
+
+#pragma mark -<YHPWaterflowLayoutDelegate>
+- (CGFloat)waterflowLayout:(YHPWaterflowLayout *)waterflowLayout heightForItemAtIndex:(NSUInteger)index itemWidth:(CGFloat)itemWidth
+{
+    YHPShop* shop = self.shops[index];
+    return itemWidth * shop.h / shop.w;
+}
+
+- (CGFloat)rowMarginInWaterFlowLayout:(YHPWaterflowLayout *)waterflowLayout
+{
+    return 10;
+}
+
+- (UIEdgeInsets)edgeInsertInWaterFlowLayout:(YHPWaterflowLayout *)waterflowLayout
+{
+    return UIEdgeInsetsMake(10, 20, 10, 20);
+}
+
 
 @end
